@@ -68,7 +68,7 @@ func _ready() -> void:
 	
 	
 func spawn() -> void:
-	var spell: Dagger = spell_to_instance.instance()
+	var spell: SpellTemplate = spell_to_instance.instance()
 	var damage_list: Array = spell_level_dict[spell_level]["damage"]
 	
 	spell.speed = spell_level_dict[spell_level]["move_speed"]

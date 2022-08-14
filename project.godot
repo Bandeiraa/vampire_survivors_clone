@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "SpellTemplate",
 "class": "Dagger",
 "language": "GDScript",
-"path": "res://scripts/spell/dagger.gd"
+"path": "res://scripts/spell/spell/dagger.gd"
 }, {
 "base": "SpellManager",
 "class": "DaggerManager",
@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/spell/spell/spell_template.gd"
 }, {
+"base": "SpellTemplate",
+"class": "Sword",
+"language": "GDScript",
+"path": "res://scripts/spell/spell/sword.gd"
+}, {
 "base": "SpellManager",
 "class": "SwordManager",
 "language": "GDScript",
@@ -81,6 +86,7 @@ _global_script_class_icons={
 "SpellManager": "",
 "SpellSlot": "",
 "SpellTemplate": "",
+"Sword": "",
 "SwordManager": ""
 }
 

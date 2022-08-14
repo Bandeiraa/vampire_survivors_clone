@@ -5,14 +5,14 @@ var speed: int
 var damage: int
 var rotation_speed: int = 180
 
-var direction: float
+var direction: Vector2
 
 export(bool) var can_move = true
 export(bool) var can_rotate = true
 
 func _physics_process(delta: float) -> void:
 	if can_move:
-		translate(Vector2(delta * speed * direction, 0))
+		translate(delta * speed * direction)
 		
 	if can_rotate:
 		rotation_degrees += delta * rotation_speed
