@@ -15,6 +15,56 @@ var dagger_level_dict: Dictionary = {
 		],
 		"move_speed": 90,
 		"spawn_cooldown": 2.5
+	},
+	
+	2: {
+		"spawn_amount": 1,
+		"damage": [
+			5,
+			10
+		],
+		"move_speed": 90,
+		"spawn_cooldown": 2.2
+	},
+	
+	3: {
+		"spawn_amount": 2,
+		"damage": [
+			5,
+			10
+		],
+		"move_speed": 90,
+		"spawn_cooldown": 2.2
+	},
+	
+	4: {
+		"spawn_amount": 2,
+		"damage": [
+			8,
+			13
+		],
+		"move_speed": 90,
+		"spawn_cooldown": 2.2
+	},
+	
+	5: {
+		"spawn_amount": 2,
+		"damage": [
+			8,
+			13
+		],
+		"move_speed": 120,
+		"spawn_cooldown": 2.2
+	},
+	
+	6: {
+		"spawn_amount": 3,
+		"damage": [
+			5,
+			10
+		],
+		"move_speed": 120,
+		"spawn_cooldown": 2.2
 	}
 }
 

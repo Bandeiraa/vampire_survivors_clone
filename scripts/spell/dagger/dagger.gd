@@ -8,12 +8,19 @@ var rotation_speed: int = 180
 
 var direction: Vector2
 
+var direction_list: Array = [
+	Vector2.LEFT,
+	Vector2.RIGHT,
+	Vector2.UP,
+	Vector2.DOWN,
+	Vector2.ONE,
+	Vector2(-1, 1),
+	Vector2(1, -1)
+]
+
 func _ready() -> void:
 	randomize()
-	direction = Vector2(
-		sign(rand_range(-1, 1)),
-		sign(rand_range(1, -1))
-	)
+	direction = direction_list[randi() % direction_list.size()].normalized()
 	
 	
 func _physics_process(delta: float) -> void:
