@@ -19,6 +19,7 @@ export(int) var move_speed
 
 func _ready() -> void:
 	global_info.character = self
+	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
 	
 	
 func _physics_process(_delta: float) -> void:
@@ -68,7 +69,9 @@ func update_exp(value: int) -> void:
 		experience -= experience_required
 		level_up()
 		
-		
+	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
+	
+	
 func level_up() -> void:
 	level += 1
 	experience = 0
