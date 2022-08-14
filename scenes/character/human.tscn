@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/character/template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/character/human.png" type="Texture" id=2]
 [ext_resource path="res://scenes/spell/manager/dagger_manager.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/spell/manager/sword_manager.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -43,5 +42,3 @@ position = Vector2( 0, 0.5 )
 shape = SubResource( 3 )
 
 [node name="DaggerManager" parent="Skill" index="0" instance=ExtResource( 3 )]
-
-[node name="SwordManager" parent="Skill" index="1" instance=ExtResource( 4 )]
