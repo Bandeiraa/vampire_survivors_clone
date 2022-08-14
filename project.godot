@@ -17,12 +17,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Dagger",
 "language": "GDScript",
-"path": "res://scripts/spell/dagger/dagger.gd"
+"path": "res://scripts/spell/dagger.gd"
 }, {
 "base": "SpellManager",
 "class": "DaggerManager",
 "language": "GDScript",
-"path": "res://scripts/spell/dagger/dagger_manager.gd"
+"path": "res://scripts/spell/manager/dagger_manager.gd"
 }, {
 "base": "Node2D",
 "class": "EnemySpawner",
@@ -42,7 +42,7 @@ _global_script_classes=[ {
 "base": "CanvasLayer",
 "class": "Interface",
 "language": "GDScript",
-"path": "res://scripts/management/interface.gd"
+"path": "res://scripts/interface/interface.gd"
 }, {
 "base": "Control",
 "class": "LevelUpContainer",
@@ -52,17 +52,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "SpellManager",
 "language": "GDScript",
-"path": "res://scripts/spell/spell_manager.gd"
+"path": "res://scripts/spell/manager/spell_manager.gd"
 }, {
 "base": "VBoxContainer",
 "class": "SpellSlot",
 "language": "GDScript",
-"path": "res://scripts/management/spell_slot.gd"
+"path": "res://scripts/interface/spell_slot.gd"
 }, {
 "base": "Node2D",
 "class": "SwordManager",
 "language": "GDScript",
-"path": "res://scripts/spell/sword/sword_manager.gd"
+"path": "res://scripts/spell/manager/sword_manager.gd"
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
