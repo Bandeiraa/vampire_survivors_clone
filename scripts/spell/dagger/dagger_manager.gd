@@ -78,10 +78,11 @@ func spawn() -> void:
 	var spell: Dagger = DAGGER.instance()
 	var damage_list: Array = dagger_level_dict[spell_level]["damage"]
 	
+	spell.direction = global_info.character.direction
 	spell.speed = dagger_level_dict[spell_level]["move_speed"]
 	spell.damage = int(rand_range(damage_list.min(), damage_list.max()))
-	spell.global_position = global_position
 	
+	spell.global_position = global_position
 	get_tree().root.call_deferred("add_child", spell)
 	
 	

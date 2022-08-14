@@ -23,17 +23,34 @@ _global_script_classes=[ {
 "class": "DaggerManager",
 "language": "GDScript",
 "path": "res://scripts/spell/dagger/dagger_manager.gd"
+}, {
+"base": "Area2D",
+"class": "EnemyTemplate",
+"language": "GDScript",
+"path": "res://scripts/enemy/template.gd"
+}, {
+"base": "Node",
+"class": "GlobalInfo",
+"language": "GDScript",
+"path": "res://scripts/management/global_info.gd"
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
 "Dagger": "",
-"DaggerManager": ""
+"DaggerManager": "",
+"EnemyTemplate": "",
+"GlobalInfo": ""
 }
 
 [application]
 
 config/name="Vampire Survivors Clone"
+run/main_scene="res://scenes/management/game_level.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global_info="*res://scripts/management/global_info.gd"
 
 [display]
 
