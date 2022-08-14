@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "CharacterTemplate",
 "language": "GDScript",
 "path": "res://scripts/character/template.gd"
+}, {
+"base": "Area2D",
+"class": "Dagger",
+"language": "GDScript",
+"path": "res://scripts/spell/dagger/dagger.gd"
+}, {
+"base": "Node2D",
+"class": "DaggerManager",
+"language": "GDScript",
+"path": "res://scripts/spell/dagger/dagger_manager.gd"
 } ]
 _global_script_class_icons={
-"CharacterTemplate": ""
+"CharacterTemplate": "",
+"Dagger": "",
+"DaggerManager": ""
 }
 
 [application]
