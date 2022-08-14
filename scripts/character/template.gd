@@ -6,6 +6,11 @@ onready var animation: AnimationPlayer = get_node("Animation")
 
 var velocity: Vector2
 
+var level: int = 1
+var experience: int = 0
+var total_experience: int = 0
+var experience_required: int = get_required_experience(level + 1)
+
 var direction: int = 1 
 var last_flipped_state: int = 1
 
@@ -54,3 +59,21 @@ func update_health(damage: int) -> void:
 		return
 		
 	animation.play("hit")
+	
+	
+func update_exp(value: int) -> void:
+	total_experience += value
+	experience += value
+	while experience >= experience_required:
+		experience -= experience_required
+		level_up()
+		
+		
+func level_up() -> void:
+	level += 1
+	experience = 0
+	experience_required = get_required_experience(level + 1)
+	
+	
+func get_required_experience(character_level: int) -> int:
+	return int(round(pow(character_level, 1.8) + character_level * 4))

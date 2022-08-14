@@ -1,4 +1,4 @@
 extends Node
 class_name GlobalInfo
 
-var character: KinematicBody2D = null
+var character: CharacterTemplate = null
