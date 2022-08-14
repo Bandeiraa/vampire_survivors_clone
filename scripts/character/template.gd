@@ -2,12 +2,14 @@ extends KinematicBody2D
 class_name CharacterTemplate
 
 onready var sprite: Sprite = get_node("Texture")
+onready var animation: AnimationPlayer = get_node("Animation")
 
 var velocity: Vector2
 
 var direction: int = 1 
 var last_flipped_state: int = 1
 
+export(int) var health
 export(int) var move_speed
 
 func _ready() -> void:
@@ -43,3 +45,12 @@ func get_orientation() -> int:
 		return -1
 		
 	return last_flipped_state
+	
+	
+func update_health(damage: int) -> void:
+	health -= damage
+	if health <= 0:
+		var _reload: bool = get_tree().change_scene("res://scenes/management/game_level.tscn")
+		return
+		
+	animation.play("hit")

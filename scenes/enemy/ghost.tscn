@@ -31,7 +31,9 @@ extents = Vector2( 7, 6 )
 speed = 30
 min_health = 5
 max_health = 15
+attack_damage = 3
 distance_threshold = 16
+attack_cooldown = 2.0
 
 [node name="Texture" parent="." index="0"]
 material = SubResource( 2 )

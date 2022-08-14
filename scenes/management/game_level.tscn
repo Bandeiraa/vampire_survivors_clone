@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/character/human.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/base_terrain.png" type="Texture" id=2]
 [ext_resource path="res://scenes/enemy/ghost.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/management/enemy_spawner.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 0/name = "base_terrain"
@@ -43,3 +44,6 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 position = Vector2( 192, 96 )
 
 [node name="Ghost" parent="." instance=ExtResource( 3 )]
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource( 4 )
