@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name Interface
 
-const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/management/level_up_container.tscn")
+const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_container.tscn")
 
 onready var level: Label = get_node("ExpContainer/VContainer/Level")
 onready var experience: Label = get_node("ExpContainer/VContainer/CurrentExp")

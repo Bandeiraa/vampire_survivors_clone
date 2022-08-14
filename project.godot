@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/spell/dagger/dagger.gd"
 }, {
-"base": "Node2D",
+"base": "SpellManager",
 "class": "DaggerManager",
 "language": "GDScript",
 "path": "res://scripts/spell/dagger/dagger_manager.gd"
@@ -49,10 +49,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interface/level_up_container.gd"
 }, {
+"base": "Node2D",
+"class": "SpellManager",
+"language": "GDScript",
+"path": "res://scripts/spell/spell_manager.gd"
+}, {
 "base": "VBoxContainer",
 "class": "SpellSlot",
 "language": "GDScript",
 "path": "res://scripts/management/spell_slot.gd"
+}, {
+"base": "Node2D",
+"class": "SwordManager",
+"language": "GDScript",
+"path": "res://scripts/spell/sword/sword_manager.gd"
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
@@ -63,7 +73,9 @@ _global_script_class_icons={
 "GlobalInfo": "",
 "Interface": "",
 "LevelUpContainer": "",
-"SpellSlot": ""
+"SpellManager": "",
+"SpellSlot": "",
+"SwordManager": ""
 }
 
 [application]

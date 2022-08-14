@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/interface/spell_background_container.png" type="Texture" id=1]
-[ext_resource path="res://scenes/management/spell_slot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/font/monogram.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/interface/spell_slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/font/monogram.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/interface/spell_background_container.png" type="Texture" id=3]
 [ext_resource path="res://scripts/interface/level_up_container.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 
 [node name="LevelUpContainer" type="Control"]
 anchor_right = 1.0
@@ -22,7 +22,7 @@ margin_left = -120.0
 margin_top = -48.0
 margin_right = 120.0
 margin_bottom = 48.0
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="LevelUpText" type="Label" parent="BackgroundTexture"]
 anchor_left = 0.5
@@ -46,18 +46,18 @@ margin_left = -124.0
 margin_top = -67.0
 margin_right = 124.0
 
-[node name="SpellSlot1" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot1" parent="BackgroundTexture/HContainer" instance=ExtResource( 1 )]
 margin_right = 80.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
 
-[node name="SpellSlot2" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot2" parent="BackgroundTexture/HContainer" instance=ExtResource( 1 )]
 margin_left = 84.0
 margin_right = 164.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
 
-[node name="SpellSlot3" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot3" parent="BackgroundTexture/HContainer" instance=ExtResource( 1 )]
 margin_left = 168.0
 margin_right = 248.0
 margin_bottom = 67.0
