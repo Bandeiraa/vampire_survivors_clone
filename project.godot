@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/management/interface.gd"
 }, {
+"base": "Control",
+"class": "LevelUpContainer",
+"language": "GDScript",
+"path": "res://scripts/interface/level_up_container.gd"
+}, {
 "base": "VBoxContainer",
 "class": "SpellSlot",
 "language": "GDScript",
@@ -57,6 +62,7 @@ _global_script_class_icons={
 "EnemyTemplate": "",
 "GlobalInfo": "",
 "Interface": "",
+"LevelUpContainer": "",
 "SpellSlot": ""
 }
 
