@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name CharacterTemplate
 
+onready var skill: Node2D = get_node("Skill")
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
 

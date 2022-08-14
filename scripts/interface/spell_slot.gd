@@ -25,6 +25,10 @@ func mouse_interaction(state: String) -> void:
 			modulate.a = 1.0
 			
 			
+func populate_slot(spell_dict: Dictionary) -> void:
+	print(spell_dict)
+	
+	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_click") and can_click:
 		emit_signal("clicked")

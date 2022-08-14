@@ -59,7 +59,7 @@ func _ready() -> void:
 			],
 			"move_speed": 30,
 			"hit_cooldown": 1.2,
-			"spawn_cooldown": 6.0,
+			"spawn_cooldown": 4.0,
 			"lifetime_cooldown": 6.0
 		},
 		
@@ -71,7 +71,7 @@ func _ready() -> void:
 			],
 			"move_speed": 30,
 			"hit_cooldown": 1.2,
-			"spawn_cooldown": 6.0,
+			"spawn_cooldown": 4.0,
 			"lifetime_cooldown": 12.0
 		}
 	}
