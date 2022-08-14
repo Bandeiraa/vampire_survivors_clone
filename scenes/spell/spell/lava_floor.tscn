@@ -9,6 +9,7 @@
 radius = 24.0832
 
 [node name="LavaFloor" instance=ExtResource( 1 )]
+z_index = -1
 script = ExtResource( 3 )
 can_kill = false
 lava_floor = ExtResource( 4 )
@@ -21,13 +22,17 @@ visible = false
 shape = SubResource( 1 )
 disabled = true
 
-[node name="ThrowLifetime" type="Timer" parent="." index="3"]
+[node name="Lifetime" type="Timer" parent="." index="3"]
+one_shot = true
+
+[node name="ThrowLifetime" type="Timer" parent="." index="4"]
 wait_time = 1.5
 one_shot = true
 autostart = true
 
-[node name="AttackCooldown" type="Timer" parent="." index="4"]
+[node name="AttackCooldown" type="Timer" parent="." index="5"]
 
 [connection signal="area_exited" from="." to="." method="on_area_exited"]
+[connection signal="timeout" from="Lifetime" to="." method="on_lifetime_timeout"]
 [connection signal="timeout" from="ThrowLifetime" to="." method="on_throw_lifetime_timeout"]
 [connection signal="timeout" from="AttackCooldown" to="." method="on_attack_cooldown_timeout"]

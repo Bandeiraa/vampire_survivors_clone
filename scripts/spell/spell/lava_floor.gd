@@ -1,12 +1,15 @@
 extends SpellTemplate
 class_name LavaFloor
 
+onready var lifetime: Timer = get_node("Lifetime")
 onready var attack_cooldown: Timer = get_node("AttackCooldown")
 
 onready var collision: CollisionShape2D = get_node("Collision")
 onready var sprite: Sprite = get_node("Texture")
 
 var hit_cooldown: float
+var lifetime_cooldown: float
+
 var enemies_in_range: Array
 
 var direction_list: Array = [
@@ -58,4 +61,9 @@ func on_throw_lifetime_timeout() -> void:
 	
 	collision.disabled = false
 	sprite.texture = lava_floor
+	lifetime.start(lifetime_cooldown)
 	attack_cooldown.start(hit_cooldown)
+	
+	
+func on_lifetime_timeout() -> void:
+	queue_free()

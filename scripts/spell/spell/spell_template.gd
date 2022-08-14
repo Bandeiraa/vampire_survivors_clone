@@ -13,7 +13,7 @@ export(bool) var can_rotate = true
 
 func _physics_process(delta: float) -> void:
 	if can_move:
-		translate(delta * speed * direction)
+		translate(delta * speed * direction.normalized())
 		
 	if can_rotate:
 		rotation_degrees += delta * rotation_speed
