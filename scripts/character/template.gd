@@ -76,6 +76,7 @@ func level_up() -> void:
 	level += 1
 	experience = 0
 	experience_required = get_required_experience(level + 1)
+	get_tree().call_group("interface", "spawn_level_up_container")
 	
 	
 func get_required_experience(character_level: int) -> int:

@@ -44,22 +44,19 @@ margin_left = -124.0
 margin_top = -67.0
 margin_right = 124.0
 
-[node name="SpellSlot1" type="VBoxContainer" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot1" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
 margin_right = 80.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
-alignment = 1
 
-[node name="SpellSlot2" type="VBoxContainer" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot2" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
 margin_left = 84.0
 margin_right = 164.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
-alignment = 1
 
-[node name="SpellSlot3" type="VBoxContainer" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
+[node name="SpellSlot3" parent="BackgroundTexture/HContainer" instance=ExtResource( 2 )]
 margin_left = 168.0
 margin_right = 248.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
-alignment = 1
