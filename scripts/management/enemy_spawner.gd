@@ -23,12 +23,13 @@ var wave_list: Array = [
 var spawn_dictionary: Dictionary = {
 	"wave_1": {
 		"enemies_list": [
-			preload("res://scenes/enemy/ghost.tscn")
+			preload("res://scenes/enemy/ghost.tscn"),
+			preload("res://scenes/enemy/bat.tscn")
 		],
 		
 		"spawn_cooldown": [
-			1.5,
-			3.0
+			1.0,
+			2.0
 		]
 	}
 }
