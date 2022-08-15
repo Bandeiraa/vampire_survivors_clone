@@ -8,6 +8,7 @@ onready var foreground: Sprite = background.get_node("Foreground")
 onready var max_distance: float = collision.shape.radius
 
 var touched: bool = false
+var disabled: bool = false
 var joystick_velocity: Vector2
 
 func _input(event) -> void:
@@ -25,6 +26,9 @@ func _input(event) -> void:
 		
 		
 func _process(_delta) -> void:
+	if disabled:
+		return
+		
 	if not touched:
 		joystick_velocity = Vector2.ZERO
 		global_info.character.update_velocity(joystick_velocity)

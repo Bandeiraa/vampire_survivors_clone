@@ -1,6 +1,8 @@
 extends Control
 class_name LevelUpContainer
 
+signal close_slot_container
+
 onready var spell_container: HBoxContainer = get_node("BackgroundTexture/HContainer")
 onready var aux_h_box: HBoxContainer = get_node("AuxHBox")
 
@@ -39,6 +41,7 @@ func key_list() -> Array:
 	
 	
 func on_slot_clicked() -> void:
+	emit_signal("close_slot_container")
 	get_tree().paused = false
 	queue_free()
 	
