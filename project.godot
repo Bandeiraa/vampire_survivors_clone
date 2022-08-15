@@ -49,6 +49,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interface/interface.gd"
 }, {
+"base": "Area2D",
+"class": "Joystick",
+"language": "GDScript",
+"path": "res://scripts/management/joystick.gd"
+}, {
 "base": "SpellTemplate",
 "class": "LavaFloor",
 "language": "GDScript",
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "GlobalInfo": "",
 "HealthBar": "",
 "Interface": "",
+"Joystick": "",
 "LavaFloor": "",
 "LavaSpellManager": "",
 "LevelUpContainer": "",
@@ -162,6 +168,10 @@ ui_click={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

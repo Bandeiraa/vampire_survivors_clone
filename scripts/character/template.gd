@@ -28,21 +28,10 @@ func _ready() -> void:
 	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
 	
 	
-func _physics_process(_delta: float) -> void:
-	move()
+func update_velocity(new_velocity: Vector2) -> void:
+	velocity = new_velocity * move_speed
 	direction = get_orientation()
 	velocity = move_and_slide(velocity)
-	
-	
-func move() -> void:
-	velocity = get_direction() * move_speed
-	
-	
-func get_direction() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	).normalized()
 	
 	
 func get_orientation() -> int:
