@@ -3,6 +3,7 @@ class_name CharacterTemplate
 
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
+onready var bar: TextureRect = get_node("HealthBarBackground")
 
 onready var skill_list: Node2D = get_node("Skill")
 onready var initial_skill: Node2D = skill_list.get_child(0)
@@ -21,6 +22,7 @@ export(int) var health
 export(int) var move_speed
 
 func _ready() -> void:
+	bar.init_bar(health)
 	global_info.character = self
 	global_info.spell_dict[initial_skill.spell_name]["current_level"] += 1
 	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
@@ -59,6 +61,8 @@ func get_orientation() -> int:
 	
 func update_health(damage: int) -> void:
 	health -= damage
+	bar.update_bar(health)
+	
 	if health <= 0:
 		var _reload: bool = get_tree().change_scene("res://scenes/management/game_level.tscn")
 		return

@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/management/global_info.gd"
 }, {
+"base": "TextureRect",
+"class": "HealthBar",
+"language": "GDScript",
+"path": "res://scripts/character/health_bar.gd"
+}, {
 "base": "CanvasLayer",
 "class": "Interface",
 "language": "GDScript",
@@ -91,6 +96,7 @@ _global_script_class_icons={
 "EnemySpawner": "",
 "EnemyTemplate": "",
 "GlobalInfo": "",
+"HealthBar": "",
 "Interface": "",
 "LavaFloor": "",
 "LavaSpellManager": "",

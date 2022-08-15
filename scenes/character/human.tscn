@@ -42,3 +42,7 @@ position = Vector2( 0, 0.5 )
 shape = SubResource( 3 )
 
 [node name="DaggerManager" parent="Skill" index="0" instance=ExtResource( 3 )]
+
+[node name="HealthBarBackground" parent="." index="5"]
+margin_top = -17.0
+margin_bottom = -9.0
