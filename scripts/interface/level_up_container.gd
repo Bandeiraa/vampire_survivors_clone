@@ -6,6 +6,9 @@ onready var spell_container: HBoxContainer = get_node("BackgroundTexture/HContai
 func _ready() -> void:
 	randomize()
 	var avaliable_spell_list: Array = key_list()
+	if avaliable_spell_list.empty():
+		on_slot_clicked()
+		
 	for spell_slot in spell_container.get_children():
 		spell_slot.connect("clicked", self, "on_slot_clicked")
 		
@@ -22,7 +25,7 @@ func key_list() -> Array:
 	var spell_dict: Dictionary = global_info.spell_dict
 	
 	for key in spell_dict.keys():
-		if spell_dict[key].max_level:
+		if spell_dict[key]["max_level"]:
 			continue
 			
 		aux_list.append([key, spell_dict[key]])

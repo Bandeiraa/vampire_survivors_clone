@@ -6,6 +6,7 @@ onready var timer: Timer = get_node("Timer")
 var spell_level: int = -1
 var spell_level_dict: Dictionary = {}
 
+export(String) var spell_name
 export(PackedScene) var spell_to_instance
 
 func _ready() -> void:

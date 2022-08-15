@@ -1,9 +1,11 @@
 extends KinematicBody2D
 class_name CharacterTemplate
 
-onready var skill: Node2D = get_node("Skill")
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
+
+onready var skill_list: Node2D = get_node("Skill")
+onready var initial_skill: Node2D = skill_list.get_child(0)
 
 var velocity: Vector2
 
@@ -20,6 +22,7 @@ export(int) var move_speed
 
 func _ready() -> void:
 	global_info.character = self
+	global_info.spell_dict[initial_skill.spell_name]["current_level"] += 1
 	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
 	
 	
@@ -82,3 +85,13 @@ func level_up() -> void:
 	
 func get_required_experience(character_level: int) -> int:
 	return int(round(pow(character_level, 1.8) + character_level * 4))
+	
+	
+func update_spell_level(spell_name: String) -> void:
+	for children in skill_list.get_children():
+		if children.spell_name == spell_name:
+			children.spell_level += 1
+			
+			
+func send_spell(spell_scene) -> void:
+	skill_list.add_child(spell_scene.instance())

@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" groups=["character"]]
 script = ExtResource( 1 )
 
 [node name="Texture" type="Sprite" parent="."]

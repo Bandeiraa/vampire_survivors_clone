@@ -6,4 +6,5 @@
 
 [node name="DaggerManager" instance=ExtResource( 3 )]
 script = ExtResource( 1 )
+spell_name = "Dagger"
 spell_to_instance = ExtResource( 2 )

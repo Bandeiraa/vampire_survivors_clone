@@ -15,7 +15,9 @@ var spell_dict: Dictionary = {
 		5: "Move Speed: +30",
 		6: "Spawn Amount: +1",
 		
-		"texture_path": "res://assets/spell/dagger.png",
+		"texture_path": preload("res://assets/spell/dagger.png"),
+		"spell_scene": preload("res://scenes/spell/manager/dagger_manager.tscn"),
+		
 		"max_level": false,
 		"current_level": 0
 	},
@@ -28,7 +30,9 @@ var spell_dict: Dictionary = {
 		5: "Spawn Cooldown: -1.0s",
 		6: "Base Damage: +10",
 		
-		"texture_path": "res://assets/spell/sword.png",
+		"texture_path": preload("res://assets/spell/sword.png"),
+		"spell_scene": preload("res://scenes/spell/manager/sword_manager.tscn"),
+		
 		"max_level": false,
 		"current_level": 0
 	},
@@ -41,7 +45,9 @@ var spell_dict: Dictionary = {
 		5: "Spawn Cooldown: -2.0s",
 		6: "Lifetime: +6.0s",
 		
-		"texture_path": "res://assets/spell/lava_potion.png",
+		"texture_path": preload("res://assets/spell/lava_potion.png"),
+		"spell_scene": preload("res://scenes/spell/manager/lava_spell_manager.tscn"),
+		
 		"max_level": false,
 		"current_level": 0
 	}

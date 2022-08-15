@@ -10,6 +10,7 @@ size = 8
 font_data = ExtResource( 1 )
 
 [node name="SpellSlot" type="VBoxContainer"]
+visible = false
 margin_right = 66.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 80, 0 )

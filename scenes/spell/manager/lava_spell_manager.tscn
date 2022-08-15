@@ -6,4 +6,5 @@
 
 [node name="LavaSpellManager" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+spell_name = "Lava Floor"
 spell_to_instance = ExtResource( 2 )
