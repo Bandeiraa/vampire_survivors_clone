@@ -25,7 +25,7 @@ func key_list() -> Array:
 		if spell_dict[key].max_level:
 			continue
 			
-		aux_list.append(spell_dict[key])
+		aux_list.append([key, spell_dict[key]])
 		
 	return aux_list
 	

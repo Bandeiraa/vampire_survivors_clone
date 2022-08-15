@@ -15,6 +15,7 @@ var spell_dict: Dictionary = {
 		5: "Move Speed: +30",
 		6: "Spawn Amount: +1",
 		
+		"texture_path": "res://assets/spell/dagger.png",
 		"max_level": false,
 		"current_level": 0
 	},
@@ -27,6 +28,7 @@ var spell_dict: Dictionary = {
 		5: "Spawn Cooldown: -1.0s",
 		6: "Base Damage: +10",
 		
+		"texture_path": "res://assets/spell/sword.png",
 		"max_level": false,
 		"current_level": 0
 	},
@@ -39,6 +41,7 @@ var spell_dict: Dictionary = {
 		5: "Spawn Cooldown: -2.0s",
 		6: "Lifetime: +6.0s",
 		
+		"texture_path": "res://assets/spell/lava_potion.png",
 		"max_level": false,
 		"current_level": 0
 	}
