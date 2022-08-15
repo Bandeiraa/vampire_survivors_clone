@@ -2,9 +2,14 @@ extends Control
 class_name LevelUpContainer
 
 onready var spell_container: HBoxContainer = get_node("BackgroundTexture/HContainer")
+onready var aux_h_box: HBoxContainer = get_node("AuxHBox")
 
 func _ready() -> void:
 	randomize()
+	
+	for button in aux_h_box.get_children():
+		button.connect("pressed", self, "on_button_pressed", [button.name])
+		
 	var avaliable_spell_list: Array = key_list()
 	if avaliable_spell_list.empty():
 		on_slot_clicked()
@@ -36,3 +41,9 @@ func key_list() -> Array:
 func on_slot_clicked() -> void:
 	get_tree().paused = false
 	queue_free()
+	
+	
+func on_button_pressed(button_name: String) -> void:
+	var target_slot: VBoxContainer = spell_container.get_node(button_name)
+	if target_slot.visible:
+		target_slot.button_clicked()

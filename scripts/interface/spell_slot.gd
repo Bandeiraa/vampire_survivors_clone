@@ -13,24 +13,7 @@ onready var spell_buff: Label = get_node("SpellBuff")
 onready var spell_texture: TextureRect = get_node("SpellTexture/ContainerBackground/SpellTexture")
 
 var dict_key: String
-var can_click: bool = false
 
-func _ready() -> void:
-	var _exited: bool = connect("mouse_exited", self, "mouse_interaction", ["exited"])
-	var _entered: bool = connect("mouse_entered", self, "mouse_interaction", ["entered"])
-	
-	
-func mouse_interaction(state: String) -> void:
-	match state:
-		"entered":
-			can_click = true
-			modulate.a = 0.5
-			
-		"exited":
-			can_click = false
-			modulate.a = 1.0
-			
-			
 func populate_slot(spell_info: Array) -> void:
 	
 	show()
@@ -49,12 +32,11 @@ func populate_slot(spell_info: Array) -> void:
 	spell_buff.text = _spell_buff
 	
 	
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_click") and can_click:
-		update_spell_level()
-		emit_signal("clicked")
-		
-		
+func button_clicked() -> void:
+	update_spell_level()
+	emit_signal("clicked")
+	
+	
 func update_spell_level() -> void:
 	global_info.spell_dict[dict_key]["current_level"] += 1
 	if global_info.spell_dict[dict_key]["current_level"] == 6:
