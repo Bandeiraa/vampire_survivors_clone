@@ -10,10 +10,10 @@ var spell_dict: Dictionary = {
 	"Dagger": {
 		1: "Unlock Dagger",
 		2: "Spawn Cooldown: -0.3s",
-		3: "Spawn Amount: +1",
-		4: "Base Damage: +3",
-		5: "Move Speed: +30",
-		6: "Spawn Amount: +1",
+		3: "Base Damage: +3",
+		4: "Spawn Cooldown: -0.3s",
+		5: "Base Damage: +3",
+		6: "Spawn Cooldown: -0.7s",
 		
 		"texture_path": preload("res://assets/spell/dagger.png"),
 		"spell_scene": preload("res://scenes/spell/manager/dagger_manager.tscn"),

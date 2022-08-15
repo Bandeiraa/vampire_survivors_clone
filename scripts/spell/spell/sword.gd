@@ -9,4 +9,5 @@ var direction_list: Array = [
 ]
 
 func _ready() -> void:
+	randomize()
 	direction = direction_list[randi() % direction_list.size()]

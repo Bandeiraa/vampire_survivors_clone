@@ -24,43 +24,43 @@ func _ready() -> void:
 		},
 		
 		3: {
-			"spawn_amount": 2,
+			"spawn_amount": 1,
 			"damage": [
-				5,
-				10
+				8,
+				13
 			],
 			"move_speed": 90,
 			"spawn_cooldown": 2.2
 		},
 		
 		4: {
-			"spawn_amount": 2,
+			"spawn_amount": 1,
 			"damage": [
 				8,
 				13
 			],
 			"move_speed": 90,
-			"spawn_cooldown": 2.2
+			"spawn_cooldown": 1.9
 		},
 		
 		5: {
-			"spawn_amount": 2,
+			"spawn_amount": 1,
 			"damage": [
-				8,
-				13
+				11,
+				16
 			],
-			"move_speed": 120,
-			"spawn_cooldown": 2.2
+			"move_speed": 90,
+			"spawn_cooldown": 1.9
 		},
 		
 		6: {
-			"spawn_amount": 3,
+			"spawn_amount": 1,
 			"damage": [
-				5,
-				10
+				11,
+				16
 			],
-			"move_speed": 120,
-			"spawn_cooldown": 2.2
+			"move_speed": 90,
+			"spawn_cooldown": 1.2
 		}
 	}
 	

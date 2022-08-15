@@ -28,8 +28,8 @@ var spawn_dictionary: Dictionary = {
 		],
 		
 		"spawn_cooldown": [
-			1.0,
-			2.0
+			0.8,
+			2.4
 		]
 	}
 }
