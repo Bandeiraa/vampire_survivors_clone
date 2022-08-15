@@ -52,3 +52,8 @@ var spell_dict: Dictionary = {
 		"current_level": 0
 	}
 }
+
+func reset() -> void:
+	for spell in spell_dict.keys():
+		spell_dict[spell]["max_level"] = false
+		spell_dict[spell]["current_level"] = 0

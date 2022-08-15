@@ -25,7 +25,7 @@ func _ready() -> void:
 	bar.init_bar(health)
 	global_info.character = self
 	global_info.spell_dict[initial_skill.spell_name]["current_level"] += 1
-	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
+	get_tree().call_group("interface", "init_exp_bar", level, experience, experience_required)
 	
 	
 func update_velocity(new_velocity: Vector2) -> void:
@@ -53,6 +53,7 @@ func update_health(damage: int) -> void:
 	bar.update_bar(health)
 	
 	if health <= 0:
+		global_info.reset()
 		var _reload: bool = get_tree().change_scene("res://scenes/management/game_level.tscn")
 		return
 		
@@ -74,6 +75,7 @@ func level_up() -> void:
 	experience = 0
 	experience_required = get_required_experience(level + 1)
 	get_tree().call_group("interface", "spawn_level_up_container")
+	get_tree().call_group("interface", "init_exp_bar", level, experience, experience_required)
 	
 	
 func get_required_experience(character_level: int) -> int:

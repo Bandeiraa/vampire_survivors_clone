@@ -1,36 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/font/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/interface/exp_bar.png" type="Texture" id=2]
+[ext_resource path="res://scripts/interface/exp_container.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 8
 font_data = ExtResource( 1 )
 
 [node name="ExpContainer" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 
-[node name="VContainer" type="VBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 80.0
-margin_bottom = 25.0
+[node name="ExpBar" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_right = 192.0
+margin_bottom = 16.0
+value = 50.0
+texture_progress = ExtResource( 2 )
 
-[node name="Level" type="Label" parent="VContainer"]
-margin_right = 80.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 80, 0 )
+[node name="Level" type="Label" parent="ExpBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -6.5
+margin_right = 130.0
+margin_bottom = 6.5
+rect_min_size = Vector2( 260, 0 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Level: 100"
+text = "Level: 1 - Current Exp: 1000/1000"
+align = 1
 valign = 1
 
-[node name="CurrentExp" type="Label" parent="VContainer"]
-margin_top = 11.0
-margin_right = 80.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 80, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "Exp: 0/36"
-valign = 1
+[node name="Tween" type="Tween" parent="."]
