@@ -163,5 +163,8 @@ func on_spawn_timer_timeout() -> void:
 	
 	
 func on_wave_timer_timeout() -> void:
+	if spawn_dictionary[current_wave]["next_wave"] == "":
+		return
+		
 	wave_timer.start(spawn_dictionary[current_wave]["next_wave_time"])
 	current_wave = spawn_dictionary[current_wave]["next_wave"]
