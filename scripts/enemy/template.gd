@@ -51,6 +51,8 @@ func attack() -> void:
 	
 func update_health(damage: int) -> void:
 	health -= damage
+	global_info.spawn_floating_text(str(damage), global_position)
+	
 	if health <= 0:
 		global_info.character.update_exp(experience)
 		queue_free()

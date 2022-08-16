@@ -1,6 +1,8 @@
 extends Node
 class_name GlobalInfo
 
+var floating_text_scene: PackedScene = preload("res://scenes/management/floating_text.tscn")
+
 var max_spell: int = 3
 var unlocked_spell: int = 1
 
@@ -57,3 +59,11 @@ func reset() -> void:
 	for spell in spell_dict.keys():
 		spell_dict[spell]["max_level"] = false
 		spell_dict[spell]["current_level"] = 0
+		
+		
+func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
+	var floating_text = floating_text_scene.instance()
+	
+	floating_text.new_text = text
+	floating_text.global_position = spawn_position
+	get_tree().root.call_deferred("add_child", floating_text)
