@@ -19,23 +19,115 @@ var spawn_dictionary: Dictionary = {
 	"wave_1": {
 		"enemies_list": [
 			preload("res://scenes/enemy/ghost.tscn"),
+			preload("res://scenes/enemy/rat.tscn"),
+			preload("res://scenes/enemy/bat.tscn")
+		],
+		
+		"spawn_probability_list": [
+			[1, 45],
+			[45, 80],
+			[80, 100]
+		],
+		
+		"spawn_cooldown": [
+			0.4,
+			1.2
+		],
+		
+		"next_wave_time": 180,
+		"next_wave": "wave_2"
+	},
+	
+	"wave_2": {
+		"enemies_list": [
+			preload("res://scenes/enemy/ghost.tscn"),
 			preload("res://scenes/enemy/bat.tscn"),
+			preload("res://scenes/enemy/crabby.tscn"),
+			preload("res://scenes/enemy/big_ghost.tscn")
+		],
+		
+		"spawn_probability_list": [
+			[1, 25],
+			[25, 60],
+			[60, 95],
+			[95, 100]
+		],
+		
+		"spawn_cooldown": [
+			0.35,
+			1.1
+		],
+		
+		"next_wave_time": 240,
+		"next_wave": "wave_3"
+	},
+	
+	"wave_3": {
+		"enemies_list": [
+			preload("res://scenes/enemy/bat.tscn"),
+			preload("res://scenes/enemy/crabby.tscn"),
+			preload("res://scenes/enemy/spider.tscn"),
+			preload("res://scenes/enemy/big_ghost.tscn")
+		],
+		
+		"spawn_probability_list": [
+			[1, 25],
+			[25, 60],
+			[60, 95],
+			[95, 100]
+		],
+		
+		"spawn_cooldown": [
+			0.3,
+			1.0
+		],
+		
+		"next_wave_time": 300,
+		"next_wave": "wave_4"
+	},
+	
+	"wave_4": {
+		"enemies_list": [
+			preload("res://scenes/enemy/spider.tscn"),
+			preload("res://scenes/enemy/cyclop.tscn"),
 			preload("res://scenes/enemy/big_ghost.tscn")
 		],
 		
 		"spawn_probability_list": [
 			[1, 65],
-			[65, 95],
-			[95, 100]
+			[65, 85],
+			[85, 100]
 		],
 		
 		"spawn_cooldown": [
-			0.8,
-			2.4
+			0.25,
+			0.9
 		],
 		
-		"next_wave_time": 180,
-		"next_wave": "wave_2"
+		"next_wave_time": 360,
+		"next_wave": "wave_5"
+	},
+	
+	"wave_5": {
+		"enemies_list": [
+			preload("res://scenes/enemy/cyclop.tscn"),
+			preload("res://scenes/enemy/big_ghost.tscn"),
+			preload("res://scenes/enemy/dark_mage.tscn")
+		],
+		
+		"spawn_probability_list": [
+			[1, 45],
+			[45, 85],
+			[85, 100]
+		],
+		
+		"spawn_cooldown": [
+			0.2,
+			0.8
+		],
+		
+		"next_wave_time": 0,
+		"next_wave": ""
 	}
 }
 
