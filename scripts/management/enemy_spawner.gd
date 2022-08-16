@@ -2,6 +2,7 @@ extends Node2D
 class_name EnemySpawner
 
 onready var timer: Timer = get_node("SpawnTimer")
+onready var wave_timer: Timer = get_node("WaveTimer")
 
 var current_wave: String = "wave_1"
 
@@ -12,12 +13,6 @@ var spawn_point_list: Array = [
 	Vector2(384, 0),
 	Vector2(384, 192),
 	Vector2(384, -192)
-]
-
-var wave_list: Array = [
-	"wave_1",
-	"wave_2",
-	"wave_3"
 ]
 
 var spawn_dictionary: Dictionary = {
@@ -37,12 +32,16 @@ var spawn_dictionary: Dictionary = {
 		"spawn_cooldown": [
 			0.8,
 			2.4
-		]
+		],
+		
+		"next_wave_time": 180,
+		"next_wave": "wave_2"
 	}
 }
 
 func _ready() -> void:
 	randomize()
+	wave_timer.start(120)
 	
 	
 func spawn() -> void:
@@ -69,3 +68,8 @@ func on_spawn_timer_timeout() -> void:
 	var spawn_cooldown: float = rand_range(spawn_cooldown_list.min(), spawn_cooldown_list.max())
 	timer.start(spawn_cooldown)
 	spawn()
+	
+	
+func on_wave_timer_timeout() -> void:
+	wave_timer.start(spawn_dictionary[current_wave]["next_wave_time"])
+	current_wave = spawn_dictionary[current_wave]["next_wave"]

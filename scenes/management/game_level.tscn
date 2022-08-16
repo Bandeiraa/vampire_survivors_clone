@@ -38,6 +38,9 @@ position = Vector2( 192, 96 )
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
+[node name="WaveTimer" type="Timer" parent="EnemySpawner"]
+one_shot = true
+
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 one_shot = true
 autostart = true
@@ -55,4 +58,5 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Interface" parent="." instance=ExtResource( 3 )]
 
+[connection signal="timeout" from="EnemySpawner/WaveTimer" to="EnemySpawner" method="on_wave_timer_timeout"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="on_spawn_timer_timeout"]
