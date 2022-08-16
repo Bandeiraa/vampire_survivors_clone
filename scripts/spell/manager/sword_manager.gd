@@ -72,7 +72,9 @@ func spawn() -> void:
 	var damage_list: Array = spell_level_dict[spell_level]["damage"]
 	
 	spell.speed = spell_level_dict[spell_level]["move_speed"]
-	spell.damage = int(rand_range(damage_list.min(), damage_list.max()))
+	
+	spell.min_damage = damage_list.min()
+	spell.max_damage = damage_list.max()
 	
 	spell.global_position = global_position
 	get_tree().root.call_deferred("add_child", spell)

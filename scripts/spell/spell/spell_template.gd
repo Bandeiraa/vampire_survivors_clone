@@ -2,7 +2,10 @@ extends Area2D
 class_name SpellTemplate
 
 var speed: int
-var damage: int
+
+var min_damage: int
+var max_damage: int
+
 var rotation_speed: int = 180
 
 var direction: Vector2
@@ -11,6 +14,10 @@ export(bool) var can_kill = true
 export(bool) var can_move = true
 export(bool) var can_rotate = true
 
+func _ready() -> void:
+	randomize()
+	
+	 
 func _physics_process(delta: float) -> void:
 	if can_move:
 		translate(delta * speed * direction.normalized())
@@ -21,7 +28,8 @@ func _physics_process(delta: float) -> void:
 		
 func on_area_entered(area) -> void:
 	if area is EnemyTemplate:
-		area.update_health(damage)
+		var random_damage: int = int(rand_range(min_damage, max_damage))
+		area.update_health(random_damage)
 		
 		
 func on_screen_exited() -> void:

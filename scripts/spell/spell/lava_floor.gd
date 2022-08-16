@@ -35,7 +35,8 @@ func _physics_process(delta: float) -> void:
 		
 func on_area_entered(area) -> void:
 	if area is EnemyTemplate:
-		area.update_health(damage)
+		var random_damage: int = int(rand_range(min_damage, max_damage))
+		area.update_health(random_damage)
 		enemies_in_range.append(area)
 		
 		
@@ -52,7 +53,8 @@ func on_area_exited(area) -> void:
 	
 func on_attack_cooldown_timeout() -> void:
 	for enemy in enemies_in_range:
-		enemy.update_health(damage)
+		var random_damage: int = int(rand_range(min_damage, max_damage))
+		enemy.update_health(random_damage)
 		
 		
 func on_throw_lifetime_timeout() -> void:

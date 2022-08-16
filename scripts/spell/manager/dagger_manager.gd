@@ -73,7 +73,9 @@ func spawn() -> void:
 	
 	spell.direction = Vector2(global_info.character.direction, 0)
 	spell.speed = spell_level_dict[spell_level]["move_speed"]
-	spell.damage = int(rand_range(damage_list.min(), damage_list.max()))
+	
+	spell.min_damage = damage_list.min()
+	spell.max_damage = damage_list.max()
 	
 	spell.global_position = global_position
 	get_tree().root.call_deferred("add_child", spell)
