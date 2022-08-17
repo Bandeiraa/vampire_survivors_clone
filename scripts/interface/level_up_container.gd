@@ -4,12 +4,12 @@ class_name LevelUpContainer
 signal close_slot_container
 
 onready var spell_container: VBoxContainer = get_node("BackgroundTexture/VContainer")
-onready var aux_h_box: HBoxContainer = get_node("AuxHBox")
+onready var aux_v_box: VBoxContainer = get_node("AuxVBox")
 
 func _ready() -> void:
 	randomize()
 	
-	for button in aux_h_box.get_children():
+	for button in aux_v_box.get_children():
 		button.connect("pressed", self, "on_button_pressed", [button.name])
 		
 	var avaliable_spell_list: Array = key_list()
