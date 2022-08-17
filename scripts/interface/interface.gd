@@ -58,3 +58,4 @@ func on_joystick_disabled() -> void:
 func on_slot_container_closed() -> void:
 	has_joystick = false
 	wait_for_idle_frame = true
+	global_info.character.start_invincibility_timer()

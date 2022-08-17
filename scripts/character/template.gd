@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name CharacterTemplate
 
+onready var invincibility_timer: Timer = get_node("InvincibilityTimer")
+
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
 onready var bar: TextureRect = get_node("HealthBarBackground")
@@ -9,6 +11,8 @@ onready var skill_list: Node2D = get_node("Skill")
 onready var initial_skill: Node2D = skill_list.get_child(0)
 
 var velocity: Vector2
+
+var is_invincible: bool = false
 
 var level: int = 1
 var experience: int = 0
@@ -49,6 +53,9 @@ func get_orientation() -> int:
 	
 	
 func update_health(damage: int) -> void:
+	if is_invincible:
+		return
+		
 	health -= damage
 	bar.update_bar(health)
 	
@@ -90,3 +97,12 @@ func update_spell_level(spell_name: String) -> void:
 			
 func send_spell(spell_scene) -> void:
 	skill_list.add_child(spell_scene.instance())
+	
+	
+func start_invincibility_timer() -> void:
+	is_invincible = true
+	invincibility_timer.start(2.0)
+	
+	
+func on_invincibility_timer_timeout() -> void:
+	is_invincible = false

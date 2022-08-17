@@ -79,3 +79,8 @@ value = 100.0
 texture_progress = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="HealthBarBackground"]
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="InvincibilityTimer" to="." method="on_invincibility_timer_timeout"]
