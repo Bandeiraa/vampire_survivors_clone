@@ -41,7 +41,8 @@ func _ready() -> void:
 		
 		
 func set_random_outline_color() -> void:
-	var random_color: Color = Color.red
+	var random_color: Color = Color(randf(), randf(), randf(), 1.0)
+	
 	sprite.material.set("shader_param/line_color", random_color)
 	sprite.material.set("shader_param/can_apply_outline", can_apply_outline)
 	

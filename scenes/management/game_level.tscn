@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/character/human.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/map/base_terrain.png" type="Texture" id=2]
 [ext_resource path="res://scenes/interface/interface.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/management/enemy_spawner.gd" type="Script" id=4]
 [ext_resource path="res://scenes/enemy/big_ghost.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/enemy/cyclop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/enemy/dark_mage.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "base_terrain"
@@ -61,13 +59,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Interface" parent="." instance=ExtResource( 3 )]
 
 [node name="BigGhost" parent="." instance=ExtResource( 5 )]
-position = Vector2( 33, 56 )
-
-[node name="Cyclop" parent="." instance=ExtResource( 6 )]
-position = Vector2( 111, 67 )
-
-[node name="DarkMage" parent="." instance=ExtResource( 7 )]
-position = Vector2( 71, 68 )
+position = Vector2( 35, 151 )
 
 [connection signal="timeout" from="EnemySpawner/WaveTimer" to="EnemySpawner" method="on_wave_timer_timeout"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="on_spawn_timer_timeout"]
