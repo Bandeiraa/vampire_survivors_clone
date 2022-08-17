@@ -28,6 +28,7 @@ shader_param/active = false
 extents = Vector2( 8, 8 )
 
 [node name="Spider" instance=ExtResource( 1 )]
+can_apply_outline = false
 speed = 25
 distance_threshold = 16
 min_health = 12

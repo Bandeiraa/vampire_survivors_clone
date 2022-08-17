@@ -16,6 +16,8 @@ var experience: int
 var distance: float
 var direction: Vector2
 
+export(bool) var can_apply_outline = true
+
 export(int) var speed
 export(int) var distance_threshold
 
@@ -33,6 +35,15 @@ func _ready() -> void:
 	randomize()
 	experience = int(rand_range(min_exp, max_exp))
 	health = int(rand_range(min_health, max_health))
+	
+	if can_apply_outline:
+		set_random_outline_color()
+		
+		
+func set_random_outline_color() -> void:
+	var random_color: Color = Color.red
+	sprite.material.set("shader_param/line_color", random_color)
+	sprite.material.set("shader_param/can_apply_outline", can_apply_outline)
 	
 	
 func _physics_process(delta: float) -> void:

@@ -28,6 +28,7 @@ shader_param/active = false
 extents = Vector2( 7, 6 )
 
 [node name="Ghost" instance=ExtResource( 1 )]
+can_apply_outline = false
 speed = 30
 distance_threshold = 16
 min_health = 5

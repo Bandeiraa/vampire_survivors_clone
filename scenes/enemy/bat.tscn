@@ -28,6 +28,7 @@ shader_param/active = false
 extents = Vector2( 8, 6 )
 
 [node name="Bat" instance=ExtResource( 2 )]
+can_apply_outline = false
 speed = 35
 distance_threshold = 16
 min_health = 8
