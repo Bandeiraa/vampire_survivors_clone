@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name CharacterTemplate
 
 onready var invincibility_timer: Timer = get_node("InvincibilityTimer")
+onready var hit_timer: Timer = get_node("HitTimer")
 
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
@@ -64,7 +65,8 @@ func update_health(damage: int) -> void:
 		var _reload: bool = get_tree().change_scene("res://scenes/management/game_level.tscn")
 		return
 		
-	animation.play("hit")
+	sprite.material.set("shader_param/active", true)
+	hit_timer.start()
 	
 	
 func update_exp(value: int) -> void:
@@ -106,3 +108,7 @@ func start_invincibility_timer() -> void:
 	
 func on_invincibility_timer_timeout() -> void:
 	is_invincible = false
+	
+	
+func on_hit_timer_timeout() -> void:
+	sprite.material.set("shader_param/active", false)
