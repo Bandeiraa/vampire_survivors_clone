@@ -9,6 +9,7 @@ const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_con
 onready var experience: Control = get_node("ExpContainer")
 
 var has_joystick: bool = false
+var wait_for_idle_frame: bool = false
 
 func init_exp_bar(current_level: int, current_exp: int, target_exp: int) -> void:
 	experience.init_bar(current_level, current_exp, target_exp)
@@ -28,6 +29,10 @@ func spawn_level_up_container() -> void:
 	
 func _input(event) -> void:
 	if not event is InputEventScreenTouch or has_joystick:
+		return
+		
+	if wait_for_idle_frame:
+		wait_for_idle_frame = false
 		return
 		
 	spawn_joystick(event.position)
@@ -52,3 +57,4 @@ func on_joystick_disabled() -> void:
 	
 func on_slot_container_closed() -> void:
 	has_joystick = false
+	wait_for_idle_frame = true
