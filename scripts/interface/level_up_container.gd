@@ -3,7 +3,7 @@ class_name LevelUpContainer
 
 signal close_slot_container
 
-onready var spell_container: HBoxContainer = get_node("BackgroundTexture/HContainer")
+onready var spell_container: VBoxContainer = get_node("BackgroundTexture/VContainer")
 onready var aux_h_box: HBoxContainer = get_node("AuxHBox")
 
 func _ready() -> void:

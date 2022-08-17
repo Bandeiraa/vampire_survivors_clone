@@ -3,13 +3,13 @@
 [node name="SpawnPointList" type="Node2D"]
 
 [node name="TopLeftSpawnPoint" type="Position2D" parent="."]
-position = Vector2( -200, -104 )
+position = Vector2( -104, -200 )
 
 [node name="TopRightSpawnPoint" type="Position2D" parent="."]
-position = Vector2( 200, -104 )
+position = Vector2( 104, -200 )
 
 [node name="BottomLeftSpawnPoint" type="Position2D" parent="."]
-position = Vector2( -200, 104 )
+position = Vector2( -104, 200 )
 
 [node name="BottomRightSpawnPoint" type="Position2D" parent="."]
-position = Vector2( 200, 104 )
+position = Vector2( 104, 200 )

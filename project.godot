@@ -144,10 +144,11 @@ global_info="*res://scripts/management/global_info.gd"
 
 [display]
 
-window/size/width=384
-window/size/height=192
-window/size/test_width=1152
-window/size/test_height=576
+window/size/width=192
+window/size/height=384
+window/size/test_width=576
+window/size/test_height=1152
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
