@@ -103,6 +103,11 @@ _global_script_classes=[ {
 "class": "SwordManager",
 "language": "GDScript",
 "path": "res://scripts/spell/manager/sword_manager.gd"
+}, {
+"base": "Label",
+"class": "TimeSpend",
+"language": "GDScript",
+"path": "res://scripts/interface/spend_time.gd"
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
@@ -123,7 +128,8 @@ _global_script_class_icons={
 "SpellSlot": "",
 "SpellTemplate": "",
 "Sword": "",
-"SwordManager": ""
+"SwordManager": "",
+"TimeSpend": ""
 }
 
 [application]
