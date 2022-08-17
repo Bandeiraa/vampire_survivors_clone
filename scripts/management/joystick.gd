@@ -36,6 +36,7 @@ func _process(_delta) -> void:
 	foreground.global_position = get_global_mouse_position()
 	foreground.position = background.position + (foreground.position - background.position).limit_length(max_distance)
 	joystick_velocity = (foreground.position).normalized()
+	global_info.joystick_velocity = joystick_velocity
 	global_info.character.update_velocity(joystick_velocity)
 	
 	

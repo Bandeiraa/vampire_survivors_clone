@@ -71,7 +71,8 @@ func spawn() -> void:
 	var spell: SpellTemplate = spell_to_instance.instance()
 	var damage_list: Array = spell_level_dict[spell_level]["damage"]
 	
-	spell.direction = Vector2(global_info.character.direction, 0)
+	#spell.direction = Vector2(global_info.character.direction, 0)
+	spell.direction = global_info.joystick_velocity
 	spell.speed = spell_level_dict[spell_level]["move_speed"]
 	
 	spell.min_damage = damage_list.min()

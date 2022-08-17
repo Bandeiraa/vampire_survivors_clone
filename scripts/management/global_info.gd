@@ -6,6 +6,8 @@ var floating_text_scene: PackedScene = preload("res://scenes/management/floating
 var max_spell: int = 3
 var unlocked_spell: int = 1
 
+var joystick_velocity: Vector2 = Vector2.RIGHT
+
 var character: CharacterTemplate = null
 
 var spell_dict: Dictionary = {
@@ -60,7 +62,9 @@ func reset() -> void:
 		spell_dict[spell]["max_level"] = false
 		spell_dict[spell]["current_level"] = 0
 		
-		
+	joystick_velocity = Vector2.RIGHT
+	
+	
 func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
 	var floating_text = floating_text_scene.instance()
 	
