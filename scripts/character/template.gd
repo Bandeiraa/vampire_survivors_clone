@@ -35,6 +35,12 @@ func _ready() -> void:
 	
 func update_velocity(new_velocity: Vector2) -> void:
 	velocity = new_velocity * move_speed
+	if velocity == Vector2.ZERO:
+		animation.play("idle")
+		
+	if velocity != Vector2.ZERO:
+		animation.play("move")
+		
 	direction = get_orientation()
 	velocity = move_and_slide(velocity)
 	

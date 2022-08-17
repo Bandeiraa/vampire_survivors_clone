@@ -33,7 +33,6 @@
 [node name="GameLevel" type="Node2D"]
 
 [node name="Human" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 96 )
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource( 4 )

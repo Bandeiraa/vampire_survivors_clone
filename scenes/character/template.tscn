@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/character/template.gd" type="Script" id=1]
 [ext_resource path="res://resources/blink_white_shader.tres" type="Material" id=2]
@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:material:shader_param/active")
+tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -18,23 +18,63 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "hit"
-length = 0.1
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:material:shader_param/active")
+tracks/0/path = NodePath("Texture:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "move"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ) ]
 }
 
 [node name="Character" type="KinematicBody2D" groups=["character"]]
@@ -52,7 +92,8 @@ current = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
-anims/hit = SubResource( 1 )
+anims/idle = SubResource( 4 )
+anims/move = SubResource( 3 )
 
 [node name="HealthBarBackground" type="TextureRect" parent="."]
 anchor_left = 0.5

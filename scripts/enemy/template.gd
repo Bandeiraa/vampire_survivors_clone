@@ -1,7 +1,11 @@
 extends Area2D
 class_name EnemyTemplate
 
+onready var sprite: Sprite = get_node("Texture")
+
 onready var timer: Timer = get_node("AttackTimer")
+onready var hit_timer: Timer = get_node("HitTimer")
+
 onready var animation: AnimationPlayer = get_node("Animation")
 
 var can_attack: bool = true
@@ -57,8 +61,13 @@ func update_health(damage: int) -> void:
 		global_info.character.update_exp(experience)
 		queue_free()
 		
-	animation.play("hit")
+	sprite.material.set("shader_param/active", true)
+	hit_timer.start()
 	
 	
 func on_attack_timer_timeout() -> void:
 	can_attack = true
+	
+	
+func on_hit_timer_timeout() -> void:
+	sprite.material.set("shader_param/active", false)

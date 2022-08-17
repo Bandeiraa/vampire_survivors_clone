@@ -6,7 +6,7 @@
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:material:shader_param/active")
+tracks/0/path = NodePath("Texture:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -15,23 +15,24 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "hit"
-length = 0.1
+[sub_resource type="Animation" id=5]
+resource_name = "move"
+length = 0.4
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Texture:material:shader_param/active")
+tracks/0/path = NodePath("Texture:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -4 ) ]
 }
 
 [node name="Enemy" type="Area2D"]
@@ -43,10 +44,16 @@ material = ExtResource( 2 )
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "move"
 anims/RESET = SubResource( 4 )
-anims/hit = SubResource( 3 )
+anims/move = SubResource( 5 )
+
+[node name="HitTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="timeout" from="HitTimer" to="." method="on_hit_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="on_attack_timer_timeout"]
