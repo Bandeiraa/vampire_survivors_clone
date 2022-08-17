@@ -1,7 +1,10 @@
 extends SpellManager
 class_name SwordManager
 
+var move_direction: Vector2
+
 func _ready() -> void:
+	randomize()
 	spell_level_dict = {
 		1: {
 			"spawn_amount": 1,
@@ -73,8 +76,26 @@ func spawn() -> void:
 	
 	spell.speed = spell_level_dict[spell_level]["move_speed"]
 	
+	spell.direction = move_direction
 	spell.min_damage = damage_list.min()
 	spell.max_damage = damage_list.max()
 	
 	spell.global_position = global_position
 	get_tree().root.call_deferred("add_child", spell)
+	
+	
+func on_timer_timeout() -> void:
+	var direction_list: Array = [
+		Vector2.UP,
+		Vector2.DOWN,
+		Vector2.LEFT,
+		Vector2.RIGHT
+	]
+	
+	for i in spell_level_dict[spell_level]["spawn_amount"]:
+		var random_index: int = randi() % direction_list.size()
+		move_direction = direction_list[random_index]
+		direction_list.remove(random_index)
+		spawn()
+		
+	timer.start(spell_level_dict[spell_level]["spawn_cooldown"])
