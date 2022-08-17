@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="SpawnPointList" type="Node2D"]
+
+[node name="TopLeftSpawnPoint" type="Position2D" parent="."]
+position = Vector2( -200, -104 )
+
+[node name="TopRightSpawnPoint" type="Position2D" parent="."]
+position = Vector2( 200, -104 )
+
+[node name="BottomLeftSpawnPoint" type="Position2D" parent="."]
+position = Vector2( -200, 104 )
+
+[node name="BottomRightSpawnPoint" type="Position2D" parent="."]
+position = Vector2( 200, 104 )

@@ -4,16 +4,12 @@ class_name EnemySpawner
 onready var timer: Timer = get_node("SpawnTimer")
 onready var wave_timer: Timer = get_node("WaveTimer")
 
-var current_wave: String = "wave_1"
-
-var spawn_point_list: Array = [
-	Vector2(0, 192),
-	Vector2(384, 192),
-	Vector2(-384, 192),
-	Vector2(384, 0),
-	Vector2(384, 192),
-	Vector2(384, -192)
+var axis_list: Array = [
+	"horizontal",
+	"vertical"
 ]
+
+var current_wave: String = "wave_1"
 
 var spawn_dictionary: Dictionary = {
 	"wave_1": {
@@ -137,10 +133,30 @@ func _ready() -> void:
 	
 	
 func spawn() -> void:
-	var spawn_position_index: int = randi() % spawn_point_list.size()
-	var character_position: Vector2 = global_info.character.global_position
-	var spawn_position: Vector2 = spawn_point_list[spawn_position_index] + character_position
+	var point_list: Array = []
+	var character_spawn_point: Node2D = global_info.character.get_node("SpawnPointList")
 	
+	for point in character_spawn_point.get_children():
+		point_list.append(point.global_position)
+		
+	var min_point: Vector2 = point_list.min()
+	var max_point: Vector2 = point_list.max()
+	
+	var x_lock: Array = [min_point.x, max_point.x]
+	var y_lock: Array = [min_point.y, max_point.y]
+	
+	var spawn_position: Vector2 = Vector2.ZERO
+	
+	var axis: String = axis_list[randi() % axis_list.size()]
+	match axis:
+		"horizontal":
+			spawn_position.x = rand_range(min_point.x, max_point.x)
+			spawn_position.y = y_lock[randi() % y_lock.size()]
+			
+		"vertical":
+			spawn_position.x = x_lock[randi() % x_lock.size()]
+			spawn_position.y = rand_range(min_point.y, max_point.y)
+			
 	var random_number: int = randi() % 100 + 1
 	var spawn_list: Array = spawn_dictionary[current_wave]["spawn_probability_list"]
 	
