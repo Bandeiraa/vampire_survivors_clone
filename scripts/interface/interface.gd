@@ -31,7 +31,7 @@ func _input(event) -> void:
 	if not event is InputEventScreenTouch or has_joystick:
 		return
 		
-	if wait_for_idle_frame:
+	if wait_for_idle_frame and OS.get_name() == "Android":
 		wait_for_idle_frame = false
 		return
 		
