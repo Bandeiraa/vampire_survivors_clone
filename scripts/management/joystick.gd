@@ -38,7 +38,3 @@ func _process(_delta) -> void:
 	joystick_velocity = (foreground.position).normalized()
 	global_info.joystick_velocity = joystick_velocity
 	global_info.character.update_velocity(joystick_velocity)
-	
-	
-func disable_joystick() -> void:
-	queue_free()

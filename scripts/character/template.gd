@@ -88,6 +88,7 @@ func update_exp(value: int) -> void:
 func level_up() -> void:
 	level += 1
 	experience = 0
+	get_tree().paused = true
 	experience_required = get_required_experience(level + 1)
 	get_tree().call_group("interface", "spawn_level_up_container")
 	get_tree().call_group("interface", "init_exp_bar", level, experience, experience_required)
