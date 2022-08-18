@@ -73,13 +73,12 @@ func spawn() -> void:
 	
 	#spell.direction = Vector2(global_info.character.direction, 0)
 	
+	spell.direction = global_info.joystick_velocity
 	if global_info.joystick_velocity.length() == 0:
 		var direction_list: Array = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
 		var random_direction: Vector2 = direction_list[randi() % direction_list.size()]
 		spell.direction = random_direction
 		
-	if global_info.joystick_velocity.length() == 1:
-		spell.direction = global_info.joystick_velocity
 		
 	spell.speed = spell_level_dict[spell_level]["move_speed"]
 	
