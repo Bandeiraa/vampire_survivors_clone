@@ -20,7 +20,7 @@ func update_exp(current_level: int, current_exp: int, target_exp: int) -> void:
 	
 	
 func spawn_level_up_container() -> void:
-	if joystick_ref != null:
+	if is_instance_valid(joystick_ref):
 		joystick_ref.queue_free()
 		
 	var level_up_scene = LEVEL_UP_SCENE.instance()

@@ -54,6 +54,21 @@ var spell_dict: Dictionary = {
 		
 		"max_level": false,
 		"current_level": 0
+	},
+	
+	"Wooden Shield": {
+		1: "Unlock Wooden Shield",
+		2: "Base Damage: +3",
+		3: "Spawn Amount: +1",
+		4: "Rotation Speed: x2",
+		5: "Spawn Cooldown: -4.0s",
+		6: "Lifetime: +4.0s",
+		
+		"texture_path": preload("res://assets/spell/wooden_shield.png"),
+		"spell_scene": preload("res://scenes/spell/manager/wooden_shield_manager.tscn"),
+		
+		"max_level": false,
+		"current_level": 0
 	}
 }
 
