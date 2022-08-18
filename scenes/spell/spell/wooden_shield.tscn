@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/spell/spell/spell_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/spell/wooden_shield.png" type="Texture" id=2]
+[ext_resource path="res://scripts/spell/spell/wooden_shield.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 5 )
+
+[node name="WoodenShield" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+can_kill = false
+can_move = false
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Notifier" parent="." index="2"]
+visible = false

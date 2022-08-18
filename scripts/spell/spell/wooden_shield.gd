@@ -1,0 +1,2 @@
+extends SpellTemplate
+class_name WoodenShield

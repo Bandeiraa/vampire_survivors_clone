@@ -108,6 +108,16 @@ _global_script_classes=[ {
 "class": "TimeSpend",
 "language": "GDScript",
 "path": "res://scripts/interface/spend_time.gd"
+}, {
+"base": "SpellTemplate",
+"class": "WoodenShield",
+"language": "GDScript",
+"path": "res://scripts/spell/spell/wooden_shield.gd"
+}, {
+"base": "SpellManager",
+"class": "WoodenShieldManager",
+"language": "GDScript",
+"path": "res://scripts/spell/manager/wooden_shield_manager.gd"
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
@@ -129,7 +139,9 @@ _global_script_class_icons={
 "SpellTemplate": "",
 "Sword": "",
 "SwordManager": "",
-"TimeSpend": ""
+"TimeSpend": "",
+"WoodenShield": "",
+"WoodenShieldManager": ""
 }
 
 [application]
