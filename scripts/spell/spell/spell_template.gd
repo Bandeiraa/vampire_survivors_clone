@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 		
 		
 func on_area_entered(area) -> void:
-	if area is EnemyTemplate:
+	if area.name == "Hitbox":
 		var random_damage: int = int(rand_range(min_damage, max_damage))
-		area.update_health(random_damage)
+		area.get_parent().update_health(random_damage)
 		
 		
 func on_screen_exited() -> void:

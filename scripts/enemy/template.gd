@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 class_name EnemyTemplate
 
 onready var sprite: Sprite = get_node("Texture")
@@ -14,6 +14,8 @@ var health: int
 var experience: int
 
 var distance: float
+
+var velocity: Vector2
 var direction: Vector2
 
 export(bool) var can_apply_outline = true
@@ -47,7 +49,7 @@ func set_random_outline_color() -> void:
 	sprite.material.set("shader_param/can_apply_outline", can_apply_outline)
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	direction = global_position.direction_to(global_info.character.global_position) 
 	distance = global_position.distance_to(global_info.character.global_position)
 	if distance < distance_threshold and can_attack:
@@ -56,7 +58,9 @@ func _physics_process(delta: float) -> void:
 	if distance < distance_threshold:
 		return
 		
-	translate(direction * speed * delta)
+		
+	velocity = direction * speed
+	velocity = move_and_slide(velocity)
 	
 	
 func attack() -> void:

@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/management/enemy_spawner.gd"
 }, {
-"base": "Area2D",
+"base": "KinematicBody2D",
 "class": "EnemyTemplate",
 "language": "GDScript",
 "path": "res://scripts/enemy/template.gd"

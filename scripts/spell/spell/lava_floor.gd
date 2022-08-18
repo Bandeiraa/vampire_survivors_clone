@@ -10,7 +10,7 @@ onready var sprite: Sprite = get_node("Texture")
 var hit_cooldown: float
 var lifetime_cooldown: float
 
-var enemies_in_range: Array
+var areas_in_range: Array
 
 var direction_list: Array = [
 	Vector2.UP,
@@ -34,27 +34,27 @@ func _physics_process(delta: float) -> void:
 		
 		
 func on_area_entered(area) -> void:
-	if area is EnemyTemplate:
+	if area.name == "Hitbox":
 		var random_damage: int = int(rand_range(min_damage, max_damage))
-		area.update_health(random_damage)
-		enemies_in_range.append(area)
+		area.get_parent().update_health(random_damage)
+		areas_in_range.append(area)
 		
 		
 func on_area_exited(area) -> void:
-	if not (area is EnemyTemplate):
+	if not (area.name == "Hitbox"):
 		return
 		
-	var index: int = enemies_in_range.find(area)
+	var index: int = areas_in_range.find(area)
 	if index == -1:
 		return
 		
-	enemies_in_range.remove(index)
+	areas_in_range.remove(index)
 	
 	
 func on_attack_cooldown_timeout() -> void:
-	for enemy in enemies_in_range:
+	for area in areas_in_range:
 		var random_damage: int = int(rand_range(min_damage, max_damage))
-		enemy.update_health(random_damage)
+		area.get_parent().update_health(random_damage)
 		
 		
 func on_throw_lifetime_timeout() -> void:
