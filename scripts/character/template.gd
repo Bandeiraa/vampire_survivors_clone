@@ -94,7 +94,7 @@ func level_up() -> void:
 	
 	
 func get_required_experience(character_level: int) -> int:
-	return int(round(pow(character_level, 1.8) + character_level * 4))
+	return int(round(pow(character_level, 2.2) + character_level * 4))
 	
 	
 func update_spell_level(spell_name: String) -> void:
