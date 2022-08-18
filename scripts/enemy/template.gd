@@ -33,8 +33,8 @@ export(float) var attack_cooldown
 
 func _ready() -> void:
 	randomize()
-	experience = int(rand_range(min_exp, max_exp))
-	health = int(rand_range(min_health, max_health))
+	experience = int(round(rand_range(min_exp, max_exp)))
+	health = int(round(rand_range(min_health, max_health)))
 	
 	if can_apply_outline:
 		set_random_outline_color()

@@ -29,13 +29,13 @@ extents = Vector2( 7, 6 )
 
 [node name="Ghost" instance=ExtResource( 1 )]
 can_apply_outline = false
-speed = 30
+speed = 25
 distance_threshold = 16
-min_health = 5
-max_health = 15
-attack_damage = 3
-min_exp = 1
-max_exp = 6
+min_health = 20
+max_health = 35
+attack_damage = 8
+min_exp = 3
+max_exp = 10
 attack_cooldown = 2.0
 
 [node name="Texture" parent="." index="0"]

@@ -29,13 +29,13 @@ extents = Vector2( 8, 6 )
 
 [node name="Bat" instance=ExtResource( 2 )]
 can_apply_outline = false
-speed = 35
+speed = 30
 distance_threshold = 16
-min_health = 8
-max_health = 18
-attack_damage = 5
-min_exp = 3
-max_exp = 8
+min_health = 15
+max_health = 30
+attack_damage = 11
+min_exp = 4
+max_exp = 11
 attack_cooldown = 1.5
 
 [node name="Texture" parent="." index="0"]

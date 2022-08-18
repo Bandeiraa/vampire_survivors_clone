@@ -14,8 +14,8 @@ var current_wave: String = "wave_1"
 var spawn_dictionary: Dictionary = {
 	"wave_1": {
 		"enemies_list": [
-			preload("res://scenes/enemy/ghost.tscn"),
 			preload("res://scenes/enemy/rat.tscn"),
+			preload("res://scenes/enemy/ghost.tscn"),
 			preload("res://scenes/enemy/bat.tscn")
 		],
 		
@@ -46,7 +46,7 @@ var spawn_dictionary: Dictionary = {
 			[1, 25],
 			[25, 60],
 			[60, 95],
-			[95, 100]
+			[99, 100]
 		],
 		
 		"spawn_cooldown": [
@@ -70,7 +70,7 @@ var spawn_dictionary: Dictionary = {
 			[1, 25],
 			[25, 60],
 			[60, 95],
-			[95, 100]
+			[99, 100]
 		],
 		
 		"spawn_cooldown": [
@@ -90,9 +90,9 @@ var spawn_dictionary: Dictionary = {
 		],
 		
 		"spawn_probability_list": [
-			[1, 65],
-			[65, 85],
-			[85, 100]
+			[1, 80],
+			[80, 90],
+			[90, 100]
 		],
 		
 		"spawn_cooldown": [
@@ -112,9 +112,9 @@ var spawn_dictionary: Dictionary = {
 		],
 		
 		"spawn_probability_list": [
-			[1, 45],
-			[45, 85],
-			[85, 100]
+			[1, 35],
+			[35, 95],
+			[95, 100]
 		],
 		
 		"spawn_cooldown": [
@@ -162,7 +162,7 @@ func spawn() -> void:
 	
 	var aux_index: int = 0
 	for list in spawn_list:
-		if random_number >= list.min() and random_number < list.max():
+		if random_number > list.min() and random_number <= list.max():
 			var enemy: EnemyTemplate = spawn_dictionary[current_wave]["enemies_list"][aux_index].instance()
 			enemy.global_position = spawn_position
 			add_child(enemy)
