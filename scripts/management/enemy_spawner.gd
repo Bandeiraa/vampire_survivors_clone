@@ -69,7 +69,7 @@ var spawn_dictionary: Dictionary = {
 		"spawn_probability_list": [
 			[1, 25],
 			[25, 60],
-			[60, 95],
+			[60, 99],
 			[99, 100]
 		],
 		
@@ -90,9 +90,9 @@ var spawn_dictionary: Dictionary = {
 		],
 		
 		"spawn_probability_list": [
-			[1, 80],
-			[80, 90],
-			[90, 100]
+			[1, 90],
+			[95, 99],
+			[99, 100]
 		],
 		
 		"spawn_cooldown": [
@@ -106,15 +106,17 @@ var spawn_dictionary: Dictionary = {
 	
 	"wave_5": {
 		"enemies_list": [
-			preload("res://scenes/enemy/cyclop.tscn"),
+			preload("res://scenes/enemy/spider.tscn"),
 			preload("res://scenes/enemy/big_ghost.tscn"),
+			preload("res://scenes/enemy/cyclop.tscn"),
 			preload("res://scenes/enemy/dark_mage.tscn")
 		],
 		
 		"spawn_probability_list": [
-			[1, 35],
-			[35, 95],
-			[95, 100]
+			[1, 65],
+			[65, 90],
+			[90, 99],
+			[99, 100]
 		],
 		
 		"spawn_cooldown": [

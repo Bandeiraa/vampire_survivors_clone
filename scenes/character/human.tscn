@@ -27,7 +27,7 @@ shader = SubResource( 1 )
 shader_param/active = false
 
 [node name="Human" instance=ExtResource( 1 )]
-health = 30
+health = 50
 move_speed = 60
 
 [node name="Texture" parent="." index="0"]
