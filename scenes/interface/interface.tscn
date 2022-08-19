@@ -88,3 +88,4 @@ anims/RESET = SubResource( 5 )
 anims/apply_pixelation = SubResource( 4 )
 
 [connection signal="timeout" from="TimeSpend/Timer" to="TimeSpend" method="on_timer_timeout"]
+[connection signal="animation_finished" from="Mask/Animation" to="." method="on_pixelate_animation_finished"]

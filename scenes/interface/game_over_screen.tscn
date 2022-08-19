@@ -1,3 +1,154 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/font/monogram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/interface/game_over_screen.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverLabel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -66.0
+margin_top = 20.0
+margin_right = 66.0
+margin_bottom = 46.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Over!!"
+align = 1
+valign = 1
+
+[node name="Shadow" type="HBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -78.0
+margin_top = -38.0
+margin_right = 80.0
+margin_bottom = -19.0
+
+[node name="MenuButton" type="Button" parent="Control/Shadow"]
+margin_right = 50.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Menu"
+flat = true
+
+[node name="ReloadButton" type="Button" parent="Control/Shadow"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Reload"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Control/Shadow"]
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Quit"
+flat = true
+
+[node name="HContainer" type="HBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -79.0
+margin_top = -39.0
+margin_right = 79.0
+margin_bottom = -20.0
+
+[node name="MenuButton" type="Button" parent="Control/HContainer"]
+margin_right = 50.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Menu"
+flat = true
+
+[node name="ReloadButton" type="Button" parent="Control/HContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Reload"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Control/HContainer"]
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
+text = "Quit"
+flat = true
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "fade_out"
+anims/RESET = SubResource( 3 )
+anims/fade_out = SubResource( 2 )

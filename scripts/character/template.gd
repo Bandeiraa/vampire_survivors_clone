@@ -68,8 +68,6 @@ func update_health(damage: int) -> void:
 	
 	if health <= 0:
 		get_tree().call_group("interface", "apply_mask_shader")
-		#global_info.reset()
-		#var _reload: bool = get_tree().change_scene("res://scenes/management/game_level.tscn")
 		return
 		
 	sprite.material.set("shader_param/active", true)

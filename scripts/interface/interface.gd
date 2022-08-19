@@ -9,6 +9,7 @@ onready var mask_animation: AnimationPlayer = mask.get_node("Animation")
 
 onready var experience: Control = get_node("ExpContainer")
 
+var game_over: bool = false
 var has_joystick: bool = false
 var wait_for_idle_frame: bool = false
 
@@ -38,6 +39,14 @@ func _input(event) -> void:
 		spawn_joystick(event.position)
 		
 		
+func _process(_delta: float) -> void:
+	if not game_over:
+		return
+		
+	if is_instance_valid(global_info.joystick):
+		global_info.joystick.queue_free()
+		
+		
 func spawn_joystick(spawn_position: Vector2) -> void:
 	has_joystick = true
 	var joystick = JOYSTICK.instance()
@@ -61,12 +70,22 @@ func on_slot_container_closed() -> void:
 	
 	
 func apply_mask_shader() -> void:
+	game_over = true
 	get_tree().paused = true
 	
+	mask.texture = create_image_from_screenshot()
+	mask_animation.play("apply_pixelation")
+	
+	
+func create_image_from_screenshot() -> ImageTexture:
 	var img = get_viewport().get_texture().get_data()
 	img.flip_y()
+	
 	var screenshot = ImageTexture.new()
 	screenshot.create_from_image(img)
-	mask.texture = screenshot
 	
-	mask_animation.play("apply_pixelation")
+	return screenshot
+	
+	
+func on_pixelate_animation_finished(_anim_name: String) -> void:
+	pass
