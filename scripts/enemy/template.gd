@@ -74,6 +74,7 @@ func update_health(damage: int) -> void:
 	global_info.spawn_floating_text(str(damage), global_position)
 	
 	if health <= 0:
+		global_info.stats_info["kill_count"] += 1
 		global_info.character.update_exp(experience)
 		queue_free()
 		

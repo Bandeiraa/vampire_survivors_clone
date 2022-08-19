@@ -17,6 +17,7 @@ weapon_dict_key = "wooden_shield_damage"
 texture = ExtResource( 2 )
 
 [node name="Collision" parent="." index="1"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="Notifier" parent="." index="2"]

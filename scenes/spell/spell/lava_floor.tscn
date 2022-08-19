@@ -23,6 +23,9 @@ visible = false
 shape = SubResource( 1 )
 disabled = true
 
+[node name="Notifier" parent="." index="2"]
+visible = false
+
 [node name="Lifetime" type="Timer" parent="." index="3"]
 one_shot = true
 

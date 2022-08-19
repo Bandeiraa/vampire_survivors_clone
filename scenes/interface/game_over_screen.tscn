@@ -162,6 +162,14 @@ margin_right = 80.0
 margin_bottom = 146.0
 texture = ExtResource( 3 )
 
+[node name="VContainer" type="VBoxContainer" parent="Control/Container"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/Container/VContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [node name="Animation" type="AnimationPlayer" parent="."]
 autoplay = "fade_out"
 anims/RESET = SubResource( 3 )

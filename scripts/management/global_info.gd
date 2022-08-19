@@ -109,6 +109,9 @@ func reset() -> void:
 		
 	joystick_velocity = Vector2.RIGHT
 	
+	stats_info["kill_count"] = 0
+	stats_info["total_damage_dealt"] = 0
+	
 	
 func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
 	var floating_text = floating_text_scene.instance()
@@ -120,3 +123,4 @@ func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
 	
 func update_stats(value: int, type: String) -> void:
 	stats_info[type] += value
+	stats_info["total_damage_dealt"] += value
