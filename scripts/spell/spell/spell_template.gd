@@ -37,4 +37,8 @@ func on_area_entered(area) -> void:
 		
 func on_screen_exited() -> void:
 	if can_kill:
-		queue_free()
+		kill()
+		
+		
+func kill() -> void:
+	queue_free()

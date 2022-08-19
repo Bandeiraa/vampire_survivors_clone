@@ -7,6 +7,8 @@ var max_spell: int = 3
 var unlocked_spell: int = 1
 
 var joystick = null
+var owner_ref = null
+
 var joystick_velocity: Vector2 = Vector2.RIGHT
 
 var character: CharacterTemplate = null
@@ -112,13 +114,15 @@ func reset() -> void:
 	stats_info["kill_count"] = 0
 	stats_info["total_damage_dealt"] = 0
 	
+	owner_ref = null
+	
 	
 func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
 	var floating_text = floating_text_scene.instance()
 	
 	floating_text.new_text = text
 	floating_text.global_position = spawn_position
-	get_tree().root.call_deferred("add_child", floating_text)
+	owner_ref.add_child(floating_text)
 	
 	
 func update_stats(value: int, type: String) -> void:

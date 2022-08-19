@@ -105,6 +105,8 @@ func spawn() -> void:
 	spell.position = random_spawn_position
 	pivot.add_child(spell)
 	
+	var _kill: bool = global_info.character.connect("game_over", spell, "queue_free")
+	
 	
 func on_timer_timeout() -> void:
 	if is_active:

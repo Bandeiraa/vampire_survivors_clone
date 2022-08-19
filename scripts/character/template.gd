@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name CharacterTemplate
 
+signal game_over
+
 onready var invincibility_timer: Timer = get_node("InvincibilityTimer")
 onready var hit_timer: Timer = get_node("HitTimer")
 
@@ -67,6 +69,7 @@ func update_health(damage: int) -> void:
 	bar.update_bar(health)
 	
 	if health <= 0:
+		emit_signal("game_over")
 		get_tree().call_group("interface", "apply_mask_shader")
 		return
 		

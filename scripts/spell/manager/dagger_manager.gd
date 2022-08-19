@@ -87,3 +87,4 @@ func spawn() -> void:
 	
 	spell.global_position = global_position
 	get_tree().root.call_deferred("add_child", spell)
+	var _kill: bool = global_info.character.connect("game_over", spell, "kill")
