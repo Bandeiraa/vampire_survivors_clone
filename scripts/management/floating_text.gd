@@ -29,3 +29,7 @@ func interpolate_text() -> void:
 	
 func _process(delta) -> void:
 	position.y += delta * 20
+	
+	
+func on_tween_finished() -> void:
+	queue_free()

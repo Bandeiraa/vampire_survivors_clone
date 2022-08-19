@@ -27,3 +27,5 @@ custom_fonts/font = SubResource( 1 )
 text = "11"
 align = 1
 valign = 1
+
+[connection signal="tween_all_completed" from="Tween" to="." method="on_tween_finished"]
