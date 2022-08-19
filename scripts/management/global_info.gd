@@ -70,6 +70,21 @@ var spell_dict: Dictionary = {
 		
 		"max_level": false,
 		"current_level": 0
+	},
+	
+	"Iron Shield": {
+		1: "Unlock Iron Shield",
+		2: "Base Damage: +3",
+		3: "Spawn Cooldown: -2.0s",
+		4: "Base Damage: +3",
+		5: "Spawn Cooldown: -2.0s",
+		6: "Base Damage: +3",
+		
+		"texture_path": preload("res://assets/spell/iron_shield.png"),
+		"spell_scene": preload("res://scenes/spell/manager/iron_shield_manager.tscn"),
+		
+		"max_level": false,
+		"current_level": 0
 	}
 }
 

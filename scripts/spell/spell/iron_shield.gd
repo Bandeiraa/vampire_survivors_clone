@@ -12,7 +12,7 @@ func _ready() -> void:
 func on_lifetime_timer_timeout() -> void:
 	direction = -direction
 	if able_to_kill:
-		lifetime.start()
 		queue_free()
 		
 	able_to_kill = true
+	lifetime.start()

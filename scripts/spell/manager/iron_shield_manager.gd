@@ -41,7 +41,7 @@ func _ready() -> void:
 				16
 			],
 			"move_speed": 120,
-			"spawn_cooldown": 12.0
+			"spawn_cooldown": 10.0
 		},
 		
 		5: {
