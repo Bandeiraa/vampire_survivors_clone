@@ -11,6 +11,17 @@ var joystick_velocity: Vector2 = Vector2.RIGHT
 
 var character: CharacterTemplate = null
 
+var stats_info: Dictionary = {
+	"total_damage_dealt": 0,
+	"kill_count": 0,
+	
+	"sword_damage": 0,
+	"dagger_damage": 0,
+	"lava_floor_damage": 0,
+	"iron_shield_damage": 0,
+	"wooden_shield_damage": 0
+}
+
 var spell_dict: Dictionary = {
 	"Dagger": {
 		1: "Unlock Dagger",
@@ -89,6 +100,9 @@ var spell_dict: Dictionary = {
 }
 
 func reset() -> void:
+	for key in stats_info.keys():
+		stats_info[key] = 0
+		
 	for spell in spell_dict.keys():
 		spell_dict[spell]["max_level"] = false
 		spell_dict[spell]["current_level"] = 0
@@ -102,3 +116,7 @@ func spawn_floating_text(text: String, spawn_position: Vector2) -> void:
 	floating_text.new_text = text
 	floating_text.global_position = spawn_position
 	get_tree().root.call_deferred("add_child", floating_text)
+	
+	
+func update_stats(value: int, type: String) -> void:
+	stats_info[type] += value

@@ -10,6 +10,7 @@ extents = Vector2( 5, 5 )
 [node name="IronShield" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 can_kill = false
+weapon_dict_key = "iron_shield_damage"
 
 [node name="Texture" parent="." index="0"]
 texture = ExtResource( 2 )

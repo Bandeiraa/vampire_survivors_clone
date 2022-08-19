@@ -12,6 +12,7 @@ radius = 24.0832
 z_index = -1
 script = ExtResource( 3 )
 can_kill = false
+weapon_dict_key = "lava_floor_damage"
 lava_floor = ExtResource( 4 )
 
 [node name="Texture" parent="." index="0"]

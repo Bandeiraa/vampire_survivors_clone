@@ -9,6 +9,7 @@ extents = Vector2( 4, 6.5 )
 
 [node name="Dagger" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+weapon_dict_key = "dagger_damage"
 
 [node name="Texture" parent="." index="0"]
 texture = ExtResource( 2 )

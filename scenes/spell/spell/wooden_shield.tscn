@@ -11,6 +11,7 @@ extents = Vector2( 5, 5 )
 script = ExtResource( 3 )
 can_kill = false
 can_move = false
+weapon_dict_key = "wooden_shield_damage"
 
 [node name="Texture" parent="." index="0"]
 texture = ExtResource( 2 )

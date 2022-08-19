@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 func on_area_entered(area) -> void:
 	if area.name == "Hitbox":
 		var random_damage: int = int(rand_range(min_damage, max_damage))
+		global_info.update_stats(random_damage, weapon_dict_key)
 		area.get_parent().update_health(random_damage)
 		areas_in_range.append(area)
 		
