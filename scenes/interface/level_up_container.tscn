@@ -9,7 +9,6 @@
 font_data = ExtResource( 2 )
 
 [node name="LevelUpContainer" type="Control"]
-pause_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
@@ -50,20 +49,17 @@ margin_right = 40.0
 margin_bottom = 120.0
 
 [node name="SpellSlot1" parent="BackgroundTexture/VContainer" instance=ExtResource( 1 )]
-visible = true
 margin_right = 80.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 48, 0 )
 
 [node name="SpellSlot2" parent="BackgroundTexture/VContainer" instance=ExtResource( 1 )]
-visible = true
 margin_top = 71.0
 margin_right = 80.0
 margin_bottom = 138.0
 rect_min_size = Vector2( 48, 0 )
 
 [node name="SpellSlot3" parent="BackgroundTexture/VContainer" instance=ExtResource( 1 )]
-visible = true
 margin_top = 142.0
 margin_right = 80.0
 margin_bottom = 209.0

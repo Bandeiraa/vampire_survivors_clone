@@ -53,3 +53,8 @@ func on_button_pressed(button_name: String) -> void:
 	var target_slot: VBoxContainer = spell_container.get_node(button_name)
 	if target_slot.visible:
 		target_slot.button_clicked()
+		
+		
+func _process(_delta: float) -> void:
+	if is_instance_valid(global_info.joystick):
+		global_info.joystick.queue_free()

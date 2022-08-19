@@ -27,9 +27,6 @@ func _input(event) -> void:
 		
 		
 func _process(_delta) -> void:
-	if get_tree().paused:
-		queue_free()
-		
 	if not touched:
 		global_info.character.update_velocity(Vector2.ZERO)
 		emit_signal("disabled")
