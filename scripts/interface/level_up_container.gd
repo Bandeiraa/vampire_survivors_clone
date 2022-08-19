@@ -8,7 +8,10 @@ onready var aux_v_box: VBoxContainer = get_node("AuxVBox")
 
 func _ready() -> void:
 	randomize()
-	
+	get_tree().paused = true
+	if is_instance_valid(global_info.joystick):
+		global_info.joystick.queue_free()
+		
 	for button in aux_v_box.get_children():
 		button.connect("pressed", self, "on_button_pressed", [button.name])
 		

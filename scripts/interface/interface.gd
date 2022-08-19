@@ -6,8 +6,6 @@ const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_con
 
 onready var experience: Control = get_node("ExpContainer")
 
-var joystick_ref = null
-
 var has_joystick: bool = false
 var wait_for_idle_frame: bool = false
 
@@ -20,8 +18,8 @@ func update_exp(current_level: int, current_exp: int, target_exp: int) -> void:
 	
 	
 func spawn_level_up_container() -> void:
-	if is_instance_valid(joystick_ref):
-		joystick_ref.queue_free()
+	if is_instance_valid(global_info.joystick):
+		global_info.joystick.queue_free()
 		
 	var level_up_scene = LEVEL_UP_SCENE.instance()
 	level_up_scene.connect("close_slot_container", self, "on_slot_container_closed")
@@ -45,7 +43,7 @@ func spawn_joystick(spawn_position: Vector2) -> void:
 	joystick.touched = true
 	
 	joystick.global_position = spawn_position
-	joystick_ref = joystick
+	global_info.joystick = joystick
 	add_child(joystick)
 	
 	

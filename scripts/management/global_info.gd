@@ -6,6 +6,7 @@ var floating_text_scene: PackedScene = preload("res://scenes/management/floating
 var max_spell: int = 3
 var unlocked_spell: int = 1
 
+var joystick = null
 var joystick_velocity: Vector2 = Vector2.RIGHT
 
 var character: CharacterTemplate = null

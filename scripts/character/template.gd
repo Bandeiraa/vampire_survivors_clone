@@ -78,8 +78,10 @@ func update_health(damage: int) -> void:
 func update_exp(value: int) -> void:
 	total_experience += value
 	experience += value
-	while experience >= experience_required:
-		experience -= experience_required
+	
+	if experience >= experience_required:
+		var leftover: int = experience - experience_required
+		experience -= leftover
 		level_up()
 		
 	get_tree().call_group("interface", "update_exp", level, experience, experience_required)
