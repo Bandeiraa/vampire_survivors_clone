@@ -4,6 +4,9 @@ class_name Interface
 const JOYSTICK: PackedScene = preload("res://scenes/management/joystick.tscn")
 const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_container.tscn")
 
+onready var mask: Sprite = get_node("Mask")
+onready var mask_animation: AnimationPlayer = mask.get_node("Animation")
+
 onready var experience: Control = get_node("ExpContainer")
 
 var has_joystick: bool = false
@@ -55,3 +58,15 @@ func on_slot_container_closed() -> void:
 	has_joystick = false
 	wait_for_idle_frame = true
 	global_info.character.start_invincibility_timer()
+	
+	
+func apply_mask_shader() -> void:
+	get_tree().paused = true
+	
+	var img = get_viewport().get_texture().get_data()
+	img.flip_y()
+	var screenshot = ImageTexture.new()
+	screenshot.create_from_image(img)
+	mask.texture = screenshot
+	
+	mask_animation.play("apply_pixelation")

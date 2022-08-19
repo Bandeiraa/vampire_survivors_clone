@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/interface/exp_container.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/interface/interface.gd" type="Script" id=2]
@@ -7,6 +7,51 @@
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float pixel_factor: hint_range(0, 1) = 0.5;
+
+void fragment() {
+	vec2 pixel_number = vec2(textureSize(TEXTURE, 0)) * pixel_factor;
+	vec2 pixelated_uv = round(UV * pixel_number) / pixel_number;
+	COLOR = texture(TEXTURE, pixelated_uv);
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/pixel_factor = 1.0
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/pixel_factor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "apply_pixelation"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/pixel_factor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.2 ]
+}
 
 [node name="Interface" type="CanvasLayer" groups=["interface"]]
 pause_mode = 2
@@ -33,5 +78,13 @@ script = ExtResource( 4 )
 
 [node name="Timer" type="Timer" parent="TimeSpend"]
 autostart = true
+
+[node name="Mask" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 96, 192 )
+
+[node name="Animation" type="AnimationPlayer" parent="Mask"]
+anims/RESET = SubResource( 5 )
+anims/apply_pixelation = SubResource( 4 )
 
 [connection signal="timeout" from="TimeSpend/Timer" to="TimeSpend" method="on_timer_timeout"]
