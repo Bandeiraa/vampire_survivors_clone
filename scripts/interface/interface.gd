@@ -3,6 +3,7 @@ class_name Interface
 
 const JOYSTICK: PackedScene = preload("res://scenes/management/joystick.tscn")
 const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_container.tscn")
+const GAME_OVER_SCENE: PackedScene = preload("res://scenes/interface/game_over_screen.tscn")
 
 onready var mask: Sprite = get_node("Mask")
 onready var mask_animation: AnimationPlayer = mask.get_node("Animation")
@@ -88,4 +89,5 @@ func create_image_from_screenshot() -> ImageTexture:
 	
 	
 func on_pixelate_animation_finished(_anim_name: String) -> void:
-	pass
+	var game_over_screen = GAME_OVER_SCENE.instance()
+	owner.add_child(game_over_screen)
