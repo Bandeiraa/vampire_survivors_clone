@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/exp_orb.png-2bef4dbc13ed8fb21da90636932bbfe6.stex"
+path="res://.import/normal_chest.png-8a2ad739d70c6d8697d023a7374ecc68.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy/exp_orb.png"
-dest_files=[ "res://.import/exp_orb.png-2bef4dbc13ed8fb21da90636932bbfe6.stex" ]
+source_file="res://assets/environment/normal_chest.png"
+dest_files=[ "res://.import/normal_chest.png-8a2ad739d70c6d8697d023a7374ecc68.stex" ]
 
 [params]
 

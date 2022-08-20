@@ -1,7 +1,7 @@
 extends Node
 class_name GlobalInfo
 
-var floating_text_scene: PackedScene = preload("res://scenes/management/floating_text.tscn")
+var floating_text_scene: PackedScene = preload("res://scenes/environment/floating_text.tscn")
 
 var max_spell: int = 3
 var unlocked_spell: int = 1

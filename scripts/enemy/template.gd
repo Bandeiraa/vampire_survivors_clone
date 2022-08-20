@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name EnemyTemplate
 
-const EXP_ORB: PackedScene = preload("res://scenes/management/exp_orb.tscn")
+const EXP_ORB: PackedScene = preload("res://scenes/environment/exp_orb.tscn")
 const HEALTH_POTION: PackedScene = preload("res://scenes/environment/health_potion.tscn")
 
 onready var sprite: Sprite = get_node("Texture")

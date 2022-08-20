@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/interface/spell_slot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/font/monogram.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/interface/spell_background_container.png" type="Texture" id=3]
+[ext_resource path="res://assets/interface/container/spell_background_container.png" type="Texture" id=3]
 [ext_resource path="res://scripts/interface/level_up_container.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=2]

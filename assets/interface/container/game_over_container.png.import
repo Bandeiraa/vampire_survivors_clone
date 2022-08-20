@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joystick_foreground.png-7874a6a5843cd600326a3d9abebe65a4.stex"
+path="res://.import/game_over_container.png-d3f2246c082182dcc2f554d13c134055.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interface/joystick_foreground.png"
-dest_files=[ "res://.import/joystick_foreground.png-7874a6a5843cd600326a3d9abebe65a4.stex" ]
+source_file="res://assets/interface/container/game_over_container.png"
+dest_files=[ "res://.import/game_over_container.png-d3f2246c082182dcc2f554d13c134055.stex" ]
 
 [params]
 

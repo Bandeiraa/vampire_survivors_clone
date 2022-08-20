@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name Interface
 
-const JOYSTICK: PackedScene = preload("res://scenes/management/joystick.tscn")
+const JOYSTICK: PackedScene = preload("res://scenes/environment/joystick.tscn")
 const LEVEL_UP_SCENE: PackedScene = preload("res://scenes/interface/level_up_container.tscn")
 const GAME_OVER_SCENE: PackedScene = preload("res://scenes/interface/game_over_screen.tscn")
 

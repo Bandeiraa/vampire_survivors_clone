@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joystick_background.png-5e8147c5f97dfff12d71c341ecb091e0.stex"
+path="res://.import/epic_chest.png-08cbea1ff29b43bb4da7c5d5f73a4871.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interface/joystick_background.png"
-dest_files=[ "res://.import/joystick_background.png-5e8147c5f97dfff12d71c341ecb091e0.stex" ]
+source_file="res://assets/environment/epic_chest.png"
+dest_files=[ "res://.import/epic_chest.png-08cbea1ff29b43bb4da7c5d5f73a4871.stex" ]
 
 [params]
 

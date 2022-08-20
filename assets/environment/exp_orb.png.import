@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spell_background_container.png-42c75f4d1c47d0607a66e4828a45440d.stex"
+path="res://.import/exp_orb.png-2371928be4c48d138c20475d3c0c516c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interface/spell_background_container.png"
-dest_files=[ "res://.import/spell_background_container.png-42c75f4d1c47d0607a66e4828a45440d.stex" ]
+source_file="res://assets/environment/exp_orb.png"
+dest_files=[ "res://.import/exp_orb.png-2371928be4c48d138c20475d3c0c516c.stex" ]
 
 [params]
 

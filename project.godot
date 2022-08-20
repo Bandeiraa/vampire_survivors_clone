@@ -52,7 +52,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "FloatingText",
 "language": "GDScript",
-"path": "res://scripts/management/floating_text.gd"
+"path": "res://scripts/environment/floating_text.gd"
 }, {
 "base": "Node2D",
 "class": "GameLevel",
@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "TextureRect",
 "class": "HealthBar",
 "language": "GDScript",
-"path": "res://scripts/character/health_bar.gd"
+"path": "res://scripts/environment/health_bar.gd"
 }, {
 "base": "Collectable",
 "class": "HealthPotion",
@@ -102,7 +102,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Joystick",
 "language": "GDScript",
-"path": "res://scripts/management/joystick.gd"
+"path": "res://scripts/environment/joystick.gd"
 }, {
 "base": "SpellTemplate",
 "class": "LavaFloor",
