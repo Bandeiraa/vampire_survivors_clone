@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name EnemyTemplate
 
+const CHEST: PackedScene = preload("res://scenes/environment/chest.tscn")
 const EXP_ORB: PackedScene = preload("res://scenes/environment/exp_orb.tscn")
 const HEALTH_POTION: PackedScene = preload("res://scenes/environment/health_potion.tscn")
 
@@ -35,6 +36,7 @@ export(int) var min_exp
 export(int) var max_exp
 
 export(float) var attack_cooldown
+export(float) var chest_spawn_threshold
 export(float) var spawn_potion_threshold
 
 func _ready() -> void:
@@ -81,6 +83,7 @@ func update_health(damage: int) -> void:
 		global_info.stats_info["kill_count"] += 1
 		spawn_health_potion()
 		spawn_exp_orb()
+		spawn_chest()
 		queue_free()
 		
 	sprite.material.set("shader_param/active", true)
@@ -109,3 +112,22 @@ func spawn_exp_orb() -> void:
 	exp_orb.experience = experience
 	exp_orb.global_position = global_position
 	global_info.owner_ref.call_deferred("add_child", exp_orb)
+	
+	
+func spawn_chest() -> void:
+	var random_f: float = randf()
+	print(random_f/2)
+	if random_f > chest_spawn_threshold:
+		return
+		
+	var chest = CHEST.instance()
+	chest.global_position = global_position
+	chest.set_texture(set_chest_texture(random_f))
+	global_info.owner_ref.call_deferred("add_child", chest)
+	
+	
+func set_chest_texture(random_float: float) -> String:
+	if random_float/2 < chest_spawn_threshold:
+		return "epic"
+		
+	return "normal"
