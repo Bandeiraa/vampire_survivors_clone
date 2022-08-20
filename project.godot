@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/template.gd"
 }, {
+"base": "Area2D",
+"class": "ExpOrb",
+"language": "GDScript",
+"path": "res://scripts/environment/exp_orb.gd"
+}, {
 "base": "Control",
 "class": "ExperienceContainer",
 "language": "GDScript",
@@ -155,6 +160,7 @@ _global_script_class_icons={
 "DaggerManager": "",
 "EnemySpawner": "",
 "EnemyTemplate": "",
+"ExpOrb": "",
 "ExperienceContainer": "",
 "FloatingText": "",
 "GameLevel": "",

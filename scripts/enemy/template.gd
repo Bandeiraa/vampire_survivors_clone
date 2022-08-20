@@ -75,7 +75,7 @@ func update_health(damage: int) -> void:
 	
 	if health <= 0:
 		global_info.stats_info["kill_count"] += 1
-		global_info.character.update_exp(experience)
+		#spawn exp orb
 		queue_free()
 		
 	sprite.material.set("shader_param/active", true)
