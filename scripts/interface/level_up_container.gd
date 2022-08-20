@@ -15,20 +15,22 @@ func _ready() -> void:
 	for button in aux_v_box.get_children():
 		button.connect("pressed", self, "on_button_pressed", [button.name])
 		
+	var index: int = 0
 	var avaliable_spell_list: Array = key_list()
-	if avaliable_spell_list.empty():
-		on_slot_clicked()
-		
 	for spell_slot in spell_container.get_children():
 		spell_slot.connect("clicked", self, "on_slot_clicked")
 		
+		if avaliable_spell_list.empty() and index == 0:
+			spell_slot.special_slot("Potion", global_info.spell_dict["Potion"])
+			return
+			
 		if avaliable_spell_list.empty():
-			spell_slot.populate_slot(global_info.spell_dict["Potion"])
 			return
 			
 		var random_index: int = randi() % avaliable_spell_list.size()
 		spell_slot.populate_slot(avaliable_spell_list[random_index])
 		avaliable_spell_list.remove(random_index)
+		index += 1
 		
 		
 func key_list() -> Array:
@@ -36,7 +38,7 @@ func key_list() -> Array:
 	var spell_dict: Dictionary = global_info.spell_dict
 	
 	for key in spell_dict.keys():
-		if spell_dict[key]["max_level"]:
+		if key == "Potion" or spell_dict[key]["max_level"]:
 			continue
 			
 		aux_list.append([key, spell_dict[key]])

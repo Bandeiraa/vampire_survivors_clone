@@ -67,7 +67,7 @@ func get_orientation() -> int:
 func update_health(type: String, value: int) -> void:
 	match type:
 		"increase":
-			health.clamp(health + value, 0, max_health)
+			health = clamp(health + value, 0, max_health)
 			bar.update_bar(health)
 			
 		"decrease":

@@ -13,7 +13,7 @@ onready var spell_buff: Label = get_node("SpellBuff")
 onready var spell_texture: TextureRect = get_node("SpellTexture/ContainerBackground/SpellTexture")
 
 var dict_key: String
-var special_slot: bool = false
+var is_in_special_slot: bool = false
 
 func populate_slot(spell_info: Array) -> void:
 	
@@ -33,25 +33,19 @@ func populate_slot(spell_info: Array) -> void:
 	spell_buff.text = _spell_buff
 	
 	
-func special_slot(spell_info: Array) -> void:
-	special_slot = true
+func special_slot(spell_key: String, spell_info: Dictionary) -> void:
+	is_in_special_slot = true
 	
 	show()
 	
-	var spell_dict: Dictionary = spell_info[list_info.DICT]
-	var _spell_texture: StreamTexture = spell_dict["texture_path"]
-	var _spell_buff: String = spell_dict["effect"]
-	
-	var _spell_name: String = spell_info[list_info.KEY]
-	
-	spell_name.text = _spell_name
-	spell_texture.texture = _spell_texture
-	spell_buff.text = _spell_buff
+	spell_name.text = spell_key
+	spell_buff.text = spell_info["effect"]
+	spell_texture.texture = spell_info["texture_path"]
 	
 	
 func button_clicked() -> void:
 	emit_signal("clicked")
-	if special_slot:
+	if is_in_special_slot:
 		global_info.character.update_health("increase", 30)
 		return
 		
