@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/character/health_bar.gd"
 }, {
+"base": "Control",
+"class": "InitialScreen",
+"language": "GDScript",
+"path": "res://scripts/interface/initial_screen.gd"
+}, {
 "base": "CanvasLayer",
 "class": "Interface",
 "language": "GDScript",
@@ -98,6 +103,11 @@ _global_script_classes=[ {
 "class": "LevelUpContainer",
 "language": "GDScript",
 "path": "res://scripts/interface/level_up_container.gd"
+}, {
+"base": "ParallaxBackground",
+"class": "Map",
+"language": "GDScript",
+"path": "res://scripts/management/map.gd"
 }, {
 "base": "Node2D",
 "class": "SpellManager",
@@ -151,6 +161,7 @@ _global_script_class_icons={
 "GameOverScreen": "",
 "GlobalInfo": "",
 "HealthBar": "",
+"InitialScreen": "",
 "Interface": "",
 "IronShield": "",
 "IronShieldManager": "",
@@ -158,6 +169,7 @@ _global_script_class_icons={
 "LavaFloor": "",
 "LavaSpellManager": "",
 "LevelUpContainer": "",
+"Map": "",
 "SpellManager": "",
 "SpellSlot": "",
 "SpellTemplate": "",
@@ -171,7 +183,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Vampire Survivors Clone"
-run/main_scene="res://scenes/management/game_level.tscn"
+run/main_scene="res://scenes/interface/initial_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

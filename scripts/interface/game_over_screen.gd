@@ -30,7 +30,8 @@ func mouse_interaction(state: String, button: Button) -> void:
 func on_button_pressed(button: Button) -> void:
 	match button.name:
 		"MenuButton":
-			pass
+			global_info.reset()
+			var _change_scene: bool = get_tree().change_scene("res://scenes/interface/initial_screen.tscn")
 			
 		"ReloadButton":
 			global_info.reset()
