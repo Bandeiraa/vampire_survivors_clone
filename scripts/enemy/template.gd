@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name EnemyTemplate
 
+const EXP_ORB: PackedScene = preload("res://scenes/management/exp_orb.tscn")
+
 onready var sprite: Sprite = get_node("Texture")
 
 onready var timer: Timer = get_node("AttackTimer")
@@ -75,7 +77,7 @@ func update_health(damage: int) -> void:
 	
 	if health <= 0:
 		global_info.stats_info["kill_count"] += 1
-		#spawn exp orb
+		spawn_exp_orb()
 		queue_free()
 		
 	sprite.material.set("shader_param/active", true)
@@ -88,3 +90,11 @@ func on_attack_timer_timeout() -> void:
 	
 func on_hit_timer_timeout() -> void:
 	sprite.material.set("shader_param/active", false)
+	
+	
+func spawn_exp_orb() -> void:
+	var exp_orb = EXP_ORB.instance()
+	
+	exp_orb.experience = experience
+	exp_orb.global_position = global_position
+	global_info.owner_ref.call_deferred("add_child", exp_orb)
