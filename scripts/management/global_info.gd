@@ -25,6 +25,11 @@ var stats_info: Dictionary = {
 }
 
 var spell_dict: Dictionary = {
+	"Potion": {
+		"texture_path": preload("res://assets/spell/health_potion.png"),
+		"effect": "Heal: +30"
+	},
+	
 	"Dagger": {
 		1: "Unlock Dagger",
 		2: "Spawn Cooldown: -0.3s",

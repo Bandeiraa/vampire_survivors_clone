@@ -22,6 +22,8 @@ var experience: int = 0
 var total_experience: int = 0
 var experience_required: int = get_required_experience(level + 1)
 
+var max_health: int
+
 var direction: int = 1 
 var last_flipped_state: int = 1
 
@@ -29,6 +31,7 @@ export(int) var health
 export(int) var move_speed
 
 func _ready() -> void:
+	max_health = health
 	bar.init_bar(health)
 	global_info.character = self
 	global_info.spell_dict[initial_skill.spell_name]["current_level"] += 1
@@ -61,7 +64,17 @@ func get_orientation() -> int:
 	return last_flipped_state
 	
 	
-func update_health(damage: int) -> void:
+func update_health(type: String, value: int) -> void:
+	match type:
+		"increase":
+			health.clamp(health + value, 0, max_health)
+			bar.update_bar(health)
+			
+		"decrease":
+			decrease_health(value)
+			
+			
+func decrease_health(damage: int) -> void:
 	if is_invincible:
 		return
 		

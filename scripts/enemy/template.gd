@@ -64,7 +64,7 @@ func _physics_process(_delta: float) -> void:
 	
 	
 func attack() -> void:
-	global_info.character.update_health(attack_damage)
+	global_info.character.update_health("decrease", attack_damage)
 	timer.start(attack_cooldown)
 	can_attack = false
 	

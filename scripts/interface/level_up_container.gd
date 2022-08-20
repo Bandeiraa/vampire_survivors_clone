@@ -23,7 +23,8 @@ func _ready() -> void:
 		spell_slot.connect("clicked", self, "on_slot_clicked")
 		
 		if avaliable_spell_list.empty():
-			continue
+			spell_slot.populate_slot(global_info.spell_dict["Potion"])
+			return
 			
 		var random_index: int = randi() % avaliable_spell_list.size()
 		spell_slot.populate_slot(avaliable_spell_list[random_index])
