@@ -8,10 +8,9 @@ export(int) var move_speed = 150
 export(int) var distance_threshold = 16
 
 func on_body_entered(body) -> void:
-	if body.is_in_group("character"):
-		player_ref = body
-		
-		
+	player_ref = body
+	
+	
 func _physics_process(delta: float) -> void:
 	if player_ref == null:
 		return
