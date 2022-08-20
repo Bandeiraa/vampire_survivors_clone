@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name EnemyTemplate
 
 const EXP_ORB: PackedScene = preload("res://scenes/management/exp_orb.tscn")
+const HEALTH_POTION: PackedScene = preload("res://scenes/environment/health_potion.tscn")
 
 onready var sprite: Sprite = get_node("Texture")
 
@@ -34,6 +35,7 @@ export(int) var min_exp
 export(int) var max_exp
 
 export(float) var attack_cooldown
+export(float) var spawn_potion_threshold
 
 func _ready() -> void:
 	randomize()
@@ -77,6 +79,7 @@ func update_health(damage: int) -> void:
 	
 	if health <= 0:
 		global_info.stats_info["kill_count"] += 1
+		spawn_health_potion()
 		spawn_exp_orb()
 		queue_free()
 		
@@ -92,6 +95,14 @@ func on_hit_timer_timeout() -> void:
 	sprite.material.set("shader_param/active", false)
 	
 	
+func spawn_health_potion() -> void:
+	var random_f: float = randf()
+	if random_f < spawn_potion_threshold:
+		var health_potion = HEALTH_POTION.instance()
+		health_potion.global_position = global_position
+		global_info.owner_ref.call_deferred("add_child", health_potion)
+		
+		
 func spawn_exp_orb() -> void:
 	var exp_orb = EXP_ORB.instance()
 	

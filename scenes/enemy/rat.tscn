@@ -66,6 +66,7 @@ attack_damage = 5
 min_exp = 1
 max_exp = 7
 attack_cooldown = 1.0
+spawn_potion_threshold = 0.005
 
 [node name="Collision" parent="." index="0"]
 visible = false

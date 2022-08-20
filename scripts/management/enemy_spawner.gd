@@ -85,8 +85,8 @@ var spawn_dictionary: Dictionary = {
 	"wave_4": {
 		"enemies_list": [
 			preload("res://scenes/enemy/spider.tscn"),
-			preload("res://scenes/enemy/cyclop.tscn"),
-			preload("res://scenes/enemy/big_ghost.tscn")
+			preload("res://scenes/enemy/big_ghost.tscn"),
+			preload("res://scenes/enemy/cyclop.tscn")
 		],
 		
 		"spawn_probability_list": [
