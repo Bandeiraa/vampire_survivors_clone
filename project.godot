@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/character/template.gd"
 }, {
+"base": "Area2D",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://scripts/environment/collectable.gd"
+}, {
 "base": "SpellTemplate",
 "class": "Dagger",
 "language": "GDScript",
@@ -34,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/enemy/template.gd"
 }, {
-"base": "Area2D",
+"base": "Collectable",
 "class": "ExpOrb",
 "language": "GDScript",
 "path": "res://scripts/environment/exp_orb.gd"
@@ -68,6 +73,11 @@ _global_script_classes=[ {
 "class": "HealthBar",
 "language": "GDScript",
 "path": "res://scripts/character/health_bar.gd"
+}, {
+"base": "Collectable",
+"class": "HealthPotion",
+"language": "GDScript",
+"path": "res://scripts/environment/health_potion.gd"
 }, {
 "base": "Control",
 "class": "InitialScreen",
@@ -156,6 +166,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CharacterTemplate": "",
+"Collectable": "",
 "Dagger": "",
 "DaggerManager": "",
 "EnemySpawner": "",
@@ -167,6 +178,7 @@ _global_script_class_icons={
 "GameOverScreen": "",
 "GlobalInfo": "",
 "HealthBar": "",
+"HealthPotion": "",
 "InitialScreen": "",
 "Interface": "",
 "IronShield": "",
